@@ -1,0 +1,23 @@
+version: '2'
+services:
+  application:
+    build: docker/application
+    networks:
+      - app_net
+    volumes:
+      - ./:/var/www
+
+  nginx:
+    build: docker/nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - application
+    networks:
+      - app_net
+    volumes_from:
+      - application
+
+networks:
+  app_net:
+    driver: bridge

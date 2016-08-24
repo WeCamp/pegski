@@ -2,4 +2,14 @@ services:
   peg.api.resolver.peg:
     class: Peg\Bundles\ApiBundle\GraphQL\Resolver\PegResolver
     tags:
-      - { name: overblog_graphql.resolver, alias: "peg", method: "resolveType" }
+      - { name: overblog_graphql.resolver, alias: "pegs", method: "resolvePegs" }
+      - { name: overblog_graphql.resolver, alias: "peg", method: "resolvePeg" }
+  peg.api.resolver.user:
+    class: Peg\Bundles\ApiBundle\GraphQL\Resolver\UserResolver
+    tags:
+      - { name: overblog_graphql.resolver, alias: "users", method: "resolveUsers" }
+      - { name: overblog_graphql.resolver, alias: "user", method: "resolveUser" }
+  peg.api.resolver.peg_event:
+    class: Peg\Bundles\ApiBundle\GraphQL\Resolver\PegEventResolver
+    tags:
+      - { name: overblog_graphql.resolver, alias: "peg_events", method: "resolveEventsByPeg" }

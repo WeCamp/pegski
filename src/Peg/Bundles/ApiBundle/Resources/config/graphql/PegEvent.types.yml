@@ -1,0 +1,18 @@
+PegEvent:
+  type: object
+  config:
+    description:  "You know… a peg do stuff"
+    fields:
+      id:
+        type:         "String!"
+        description:  "The ID of this event"
+      action:
+        type:         "String"
+        description:  "What is this event"
+      user:
+        type:         "User"
+        description:  "Who did it"
+        resolve: "@=resolver('user', [value['user_id']])"
+      happenedAt:
+        type:         "String"
+        description:  "When this happened"

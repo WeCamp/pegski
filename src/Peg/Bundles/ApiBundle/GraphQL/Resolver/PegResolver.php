@@ -4,7 +4,7 @@ namespace Peg\Bundles\ApiBundle\GraphQL\Resolver;
 
 class PegResolver
 {
-    public function resolveType($data)
+    public function resolvePegs(): array
     {
         return [
             [
@@ -20,5 +20,14 @@ class PegResolver
                 'shortcode' => 'ab5e8cfe'
             ],
         ];
+    }
+
+    public function resolvePeg(string $shortcode): array
+    {
+        $item = array_filter($this->resolvePegs(), function($item) use ($shortcode) {
+           return $item['shortcode'] === $shortcode;
+        });
+
+        return current($item) ?? [];
     }
 }

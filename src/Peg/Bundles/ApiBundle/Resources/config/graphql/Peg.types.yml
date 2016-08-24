@@ -14,4 +14,7 @@ Peg:
       shortcode:
         type:         "String"
         description:  "Shortcode used to access the peg"
-#    resolveType: "@=resolver('peg', [value])"
+      pegEvents:
+        type: "[PegEvent]"
+        description: "Ohhh.. what happened to me?!"
+        resolve: "@=resolver('peg_events', [value])"

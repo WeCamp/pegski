@@ -5,8 +5,19 @@ Query:
     fields:
       pegs:
         type: "[Peg]"
-#        args:
-#          episode:
-#              description: "If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode."
-#              type: "Episode"
-        resolve: "@=resolver('peg', [args])"
+        resolve: "@=resolver('pegs')"
+      peg:
+        type: "Peg"
+        resolve: "@=resolver('peg', [args['shortcode']])"
+        args:
+          shortcode:
+            type: "String!"
+      users:
+        type: "[User]"
+        resolve: "@=resolver('users')"
+      user:
+        type: "User"
+        args:
+          email:
+            type: "String!"
+        resolve: "@=resolver('user', [args['email']])"

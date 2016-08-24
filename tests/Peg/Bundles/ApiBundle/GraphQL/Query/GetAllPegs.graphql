@@ -1,0 +1,6 @@
+query Test {
+  pegs {
+    id
+    shortcode
+  }
+}

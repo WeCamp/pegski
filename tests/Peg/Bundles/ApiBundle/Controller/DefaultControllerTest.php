@@ -1,6 +1,6 @@
 <?php
 
-namespace Peg\Bundles\ApiBundle\Tests\Controller;
+namespace tests\Peg\Bundles\ApiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

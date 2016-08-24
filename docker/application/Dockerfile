@@ -31,11 +31,17 @@ RUN apt-get update && apt-get install -y libicu-dev
 RUN docker-php-ext-install intl
 
 COPY php.ini /usr/local/etc/php/php.ini
+COPY php-fpm.conf /usr/local/etc/php-fpm.d/
 
 RUN mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+# Change the www-data user to ID 1000
+RUN usermod -u 1000 www-data
 
 EXPOSE 9000
 
 VOLUME /var/www
 
 WORKDIR /var/www
+
+CMD ["php-fpm"]

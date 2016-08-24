@@ -30,6 +30,13 @@ RUN docker-php-ext-install pdo_mysql
 RUN apt-get update && apt-get install -y libicu-dev
 RUN docker-php-ext-install intl
 
+# mongo needs libssl as dep
+RUN apt-get install -y libssl-dev
+
+# Install mongodb ext
+RUN pecl install mongodb
+RUN docker-php-ext-enable mongodb
+
 COPY php.ini /usr/local/etc/php/php.ini
 COPY php-fpm.conf /usr/local/etc/php-fpm.d/
 

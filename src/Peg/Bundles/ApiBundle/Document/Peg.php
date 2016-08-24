@@ -16,7 +16,7 @@ class Peg
     /**
      * @var string
      *
-     * @MongoDB\Id(strategy="")
+     * @MongoDB\Id(strategy="UUID")
      */
     private $id;
 

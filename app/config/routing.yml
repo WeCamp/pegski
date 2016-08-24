@@ -1,0 +1,6 @@
+api:
+    resource: "@PegApiBundle/Resources/config/routing.yml"
+    prefix:   /
+
+overblog_graphql_endpoint:
+    resource: "@OverblogGraphQLBundle/Resources/config/routing/graphql.yml"

@@ -1,0 +1,3 @@
+api_homepage:
+    path:     /
+    defaults: { _controller: PegApiBundle:Default:index }

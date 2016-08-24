@@ -9,7 +9,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        $peg = Peg::register('uygjytkyf');
+        $peg = Peg::register($this->get('peg.util.short_code_generator')->generateUniqueShortCode());
 
         $dm = $this->get('doctrine_mongodb')->getManager();
 

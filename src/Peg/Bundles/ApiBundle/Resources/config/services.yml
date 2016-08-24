@@ -2,3 +2,12 @@ imports:
     - { resource: "@PegApiBundle/Resources/config/graphql.resolvers.yml" }
 
 services:
+    peg.api_bundle.repository.doctrine.odm.peg:
+        class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\PegRepository
+        arguments:
+            - '@doctrine.odm.mongodb.document_manager'
+
+    peg.util.short_code_generator:
+        class: Peg\Util\ShortCodeGenerator
+        arguments:
+            - '@peg.api_bundle.repository.doctrine.odm.peg'

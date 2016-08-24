@@ -2,6 +2,8 @@ version: '2'
 services:
   application:
     build: docker/application
+    depends_on:
+      - mongodb
     networks:
       - app_net
     volumes:

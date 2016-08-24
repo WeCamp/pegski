@@ -27,9 +27,9 @@ class PegResolver
 
     public function resolvePegs(): array
     {
-        $qb = $this->documentManager->createQueryBuilder(Peg::class);
+        $qb    = $this->documentManager->createQueryBuilder(Peg::class);
         $query = $qb->sort('id', 'desc')
-            ->getQuery();
+                    ->getQuery();
 
         /** @var Cursor $result */
         $result = $query->getIterator();
@@ -37,11 +37,15 @@ class PegResolver
         return $result->toArray();
     }
 
+
     public function resolvePeg(string $shortcode): array
     {
-        $item = array_filter($this->resolvePegs(), function($item) use ($shortcode) {
-           return $item['shortcode'] === $shortcode;
-        });
+        $item = array_filter(
+            $this->resolvePegs(),
+            function ($item) use ($shortcode) {
+                return $item['shortcode'] === $shortcode;
+            }
+        );
 
         return current($item) ?? [];
     }

@@ -18,6 +18,14 @@ services:
     volumes_from:
       - application
 
+# @TODO make sure you enable mongodb auth for security reasons
+  mongodb:
+    image: mongo:latest
+    networks:
+      - app_net
+    volumes_from:
+      - application
+
 networks:
   app_net:
     driver: bridge

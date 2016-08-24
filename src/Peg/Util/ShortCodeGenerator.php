@@ -12,6 +12,11 @@ use Peg\Repository\PegRepositoryInterface;
 final class ShortCodeGenerator
 {
     /**
+     * @var Tokenizr
+     */
+    private $tokenizer;
+
+    /**
      * @param PegRepositoryInterface $pegRepository
      */
     public function __construct(PegRepositoryInterface $pegRepository)

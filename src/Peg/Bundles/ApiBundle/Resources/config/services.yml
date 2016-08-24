@@ -9,6 +9,12 @@ services:
         arguments:
             - Peg\Bundles\ApiBundle\Document\Peg
 
+    peg.api_bundle.repository.doctrine.odm.user:
+        class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\UserRepository
+        factory: ['@doctrine.odm.mongodb.document_manager', getRepository]
+        arguments:
+            - Peg\Bundles\ApiBundle\Document\User
+
     peg.util.short_code_generator:
         class: Peg\Util\ShortCodeGenerator
         arguments:

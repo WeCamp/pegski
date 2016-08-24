@@ -2,36 +2,63 @@
 
 namespace Peg\Bundles\ApiBundle\GraphQL\Resolver;
 
+use Overblog\GraphQLBundle\Error\UserWarning;
+use Peg\Bundles\ApiBundle\Document\User;
+use Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\UserRepository;
+
 class UserResolver
 {
-    public function resolveUsers()
+    /**
+     * @var UserRepository
+     */
+    private $repository;
+
+
+    /**
+     * PegResolver constructor.
+     *
+     * @param UserRepository $repository
+     */
+    public function __construct(UserRepository $repository)
     {
-        return [
-            [
-                'id' => 'a945977e-0a57-490f-93c9-7673877927e3',
-                'email' => 'renato@mefi.in',
-            ],
-            [
-                'id' => '87baac55-3cb4-4d00-af3f-fc466faa899a',
-                'email' => 'roxana.m.cristian@gmail.com',
-            ]
-        ];
+        $this->repository = $repository;
     }
 
-    public function resolveUser(string $email)
-    {
-        $item = array_filter($this->resolveUsers(), function($item) use ($email) {
-            return $item['email'] === $email;
-        });
 
-        return current($item) ?? [];
+    public function resolveUsers(): array
+    {
+        return $this->repository->findAll();
     }
 
-    public function resolveUserById(string $userId) {
-        $item = array_filter($this->resolveUsers(), function($item) use ($userId) {
-            return $item['id'] === $userId;
-        });
 
-        return current($item) ?? [];
+    /**
+     * @throws UserWarning if unable to find user with given email
+     */
+    public function resolveUser(string $email): User
+    {
+        /** @var User $user */
+        $user = $this->repository->findOneBy(['email' => $email]);
+
+        if (!$user) {
+            throw new UserWarning("Unable to find user with email '{$email}");
+        }
+
+        return $user;
+    }
+
+
+    /**
+     * @throws UserWarning if unable to find user with given email
+     */
+    public function resolveUserById(string $userId): User
+    {
+        /** @var User $user */
+        $user = $this->repository->findOneBy(['id' => $userId]);
+
+        if (!$user) {
+            throw new UserWarning("Unable to find user with ID '{$userId}");
+        }
+
+        return $user;
     }
 }

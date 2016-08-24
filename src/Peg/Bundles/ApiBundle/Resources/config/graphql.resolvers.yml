@@ -8,6 +8,8 @@ services:
       - { name: overblog_graphql.resolver, alias: "peg", method: "resolvePeg" }
   peg.api.resolver.user:
     class: Peg\Bundles\ApiBundle\GraphQL\Resolver\UserResolver
+    arguments:
+      - "@peg.api_bundle.repository.doctrine.odm.user"
     tags:
       - { name: overblog_graphql.resolver, alias: "users", method: "resolveUsers" }
       - { name: overblog_graphql.resolver, alias: "user", method: "resolveUser" }

@@ -27,6 +27,22 @@ class Peg
      */
     private $shortcode;
 
+    protected function __construct(string $shortCode)
+    {
+        $this->shortcode = $shortCode;
+    }
+
+    /**
+     * Register a new peg.
+     *
+     * @param string $shortCode
+     *
+     * @return Peg
+     */
+    public static function register(string $shortCode)
+    {
+        return new self($shortCode);
+    }
 
     /**
      * Get id
@@ -37,22 +53,6 @@ class Peg
     {
         return $this->id;
     }
-
-
-    /**
-     * Set shortcode
-     *
-     * @param string $shortcode
-     *
-     * @return $this
-     */
-    public function setShortcode($shortcode)
-    {
-        $this->shortcode = $shortcode;
-
-        return $this;
-    }
-
 
     /**
      * Get shortcode

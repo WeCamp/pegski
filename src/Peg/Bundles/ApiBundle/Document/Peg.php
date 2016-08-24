@@ -44,22 +44,12 @@ class Peg
         return new self($shortCode);
     }
 
-    /**
-     * Get id
-     *
-     * @return string $id
-     */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * Get shortcode
-     *
-     * @return string $shortcode
-     */
-    public function getShortcode()
+    public function getShortcode(): string
     {
         return $this->shortcode;
     }

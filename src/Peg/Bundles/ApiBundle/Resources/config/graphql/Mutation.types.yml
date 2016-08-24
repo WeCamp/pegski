@@ -1,0 +1,7 @@
+Mutation:
+  type: object
+  config:
+    fields:
+      createPeg:
+        type: Query
+        resolve: "@=mutation('peg_mutation_create')"

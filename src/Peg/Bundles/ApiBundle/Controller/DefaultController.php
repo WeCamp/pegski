@@ -10,11 +10,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        $peg = Peg::register($this->get('peg.util.short_code_generator')->generateUniqueShortCode());
-
-        $commandBus = $this->get('tactician.commandbus');
-        $commandBus->handle(new PegCreate($peg));
-
         return $this->render('PegApiBundle:Default:index.html.twig');
     }
 }

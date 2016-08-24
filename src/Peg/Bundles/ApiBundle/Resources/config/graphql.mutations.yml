@@ -1,0 +1,8 @@
+services:
+  peg.api.resolver.peg:
+    class: Peg\Bundles\ApiBundle\GraphQL\Mutation\PegMutation
+    arguments:
+      - "@tactician.commandbus"
+      - "@peg.util.short_code_generator"
+    tags:
+      - { name: overblog_graphql.mutation, alias: "peg_mutation_create", method: "createPeg" }

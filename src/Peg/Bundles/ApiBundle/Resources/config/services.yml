@@ -1,5 +1,6 @@
 imports:
     - { resource: "@PegApiBundle/Resources/config/graphql.resolvers.yml" }
+    - { resource: "@PegApiBundle/Resources/config/graphql.mutations.yml" }
 
 services:
     peg.api_bundle.repository.doctrine.odm.peg:

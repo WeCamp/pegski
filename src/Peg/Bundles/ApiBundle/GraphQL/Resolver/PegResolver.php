@@ -2,6 +2,10 @@
 
 namespace Peg\Bundles\ApiBundle\GraphQL\Resolver;
 
+use Doctrine\ODM\MongoDB\Cursor;
+use Doctrine\ODM\MongoDB\DocumentManager;
+use Peg\Bundles\ApiBundle\Document\Peg;
+
 class PegResolver
 {
     /**
@@ -23,20 +27,14 @@ class PegResolver
 
     public function resolvePegs(): array
     {
-        return [
-            [
-                'id' => 'a1dd9640-f371-47ff-b134-0082b70ffb82',
-                'shortcode' => 'a1dd9640'
-            ],
-            [
-                'id' => '610ca2a0-7d67-4a45-bf64-4eaf80d48902',
-                'shortcode' => '610ca2a0'
-            ],
-            [
-                'id' => 'ab5e8cfe-4ffa-41af-91e4-db09108611af',
-                'shortcode' => 'ab5e8cfe'
-            ],
-        ];
+        $qb = $this->documentManager->createQueryBuilder(Peg::class);
+        $query = $qb->sort('id', 'desc')
+            ->getQuery();
+
+        /** @var Cursor $result */
+        $result = $query->getIterator();
+
+        return $result->toArray();
     }
 
     public function resolvePeg(string $shortcode): array

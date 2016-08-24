@@ -1,0 +1,7 @@
+services:
+  peg.persistence.command.peg_create.handler:
+    class: Peg\Domain\Commands\PegCreateHandler
+    arguments:
+      - "@doctrine.odm.mongodb.document_manager"
+    tags:
+      - { name: tactician.handler, command: Peg\Domain\Commands\PegCreate }

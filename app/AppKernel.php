@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new League\Tactician\Bundle\TacticianBundle(),
             new Overblog\GraphQLBundle\OverblogGraphQLBundle(),
             new Peg\Bundles\ApiBundle\PegApiBundle(),
+            new Peg\Bundles\PersistenceBundle\PegPersistenceBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -4,6 +4,7 @@ build:
 	docker-compose build
 
 setup: build
+	docker-compose run application composer install
 	docker-compose run application bin/console doctrine:mongodb:schema:update
 
 run:

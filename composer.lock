@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "48cca714cb02fe2e45ccfa531dbe5ea4",
-    "content-hash": "be2d849326861ba2770ac89e478917b1",
+    "hash": "11894073c419fa633a86e7e68d8c0e38",
+    "content-hash": "21aa9dbc1a953192b645240a3234deb0",
     "packages": [
         {
             "name": "alcaeus/mongo-php-adapter",
@@ -88,13 +88,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/annotations/zipball/f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
                 "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
@@ -162,13 +156,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/cache/zipball/f8af318d14bdb0eff0336795b428b547bd39ccb6",
                 "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": "~5.5|~7.0"
@@ -238,13 +226,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
                 "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
@@ -310,13 +292,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/common/zipball/a579557bc689580c19fee4e27487a67fe60defc0",
                 "reference": "a579557bc689580c19fee4e27487a67fe60defc0",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "1.*",
@@ -389,13 +365,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/dbal/zipball/abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
                 "reference": "abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "doctrine/common": ">=2.4,<2.7-dev",
@@ -553,13 +523,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/18c600a9b82f6454d2e81ca4957cdd56a1cf3504",
                 "reference": "18c600a9b82f6454d2e81ca4957cdd56a1cf3504",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.4.2",
@@ -647,13 +611,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
                 "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
@@ -720,13 +678,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8e884e78f9f0eb1329e445619e04456e64d8051d",
                 "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3,<8.0-DEV"
@@ -780,13 +732,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
                 "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
@@ -1090,13 +1036,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
                 "reference": "bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "doctrine/cache": "~1.4",
@@ -1172,13 +1112,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc",
                 "reference": "d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
@@ -1229,13 +1163,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/64990d96e0959dff8e059dfcdc1af130728d92bc",
                 "reference": "64990d96e0959dff8e059dfcdc1af130728d92bc",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
@@ -1272,6 +1200,144 @@
                 "sql"
             ],
             "time": "2014-01-12 16:20:24"
+        },
+        {
+            "name": "league/tactician",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/tactician.git",
+                "reference": "1f3aaad497f07a8bef147a37c7e3f2f7c23fcd21"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/tactician/zipball/1f3aaad497f07a8bef147a37c7e3f2f7c23fcd21",
+                "reference": "1f3aaad497f07a8bef147a37c7e3f2f7c23fcd21",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.3",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Tactician\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ross Tuck",
+                    "homepage": "http://tactician.thephpleague.com"
+                }
+            ],
+            "description": "A small, flexible command bus. Handy for building service layers.",
+            "keywords": [
+                "command",
+                "command bus",
+                "service layer"
+            ],
+            "time": "2016-02-20 11:14:36"
+        },
+        {
+            "name": "league/tactician-bundle",
+            "version": "v0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/tactician-bundle.git",
+                "reference": "14b38eb1d855fdd805eee2f6c1c20e956534381f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/tactician-bundle/zipball/14b38eb1d855fdd805eee2f6c1c20e956534381f",
+                "reference": "14b38eb1d855fdd805eee2f6c1c20e956534381f",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "league/tactician": "^1.0",
+                "php": ">=5.5",
+                "symfony/config": "^2.3|^3.0",
+                "symfony/dependency-injection": "^2.3|^3.0",
+                "symfony/http-kernel": "^2.3|^3.0",
+                "symfony/yaml": "^2.3|^3.0"
+            },
+            "require-dev": {
+                "league/tactician-doctrine": "^1.0",
+                "matthiasnoback/symfony-config-test": "~1.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^0.7",
+                "mockery/mockery": "~0.9.4",
+                "phpunit/phpunit": "~4.5",
+                "symfony/validator": "^2.3|^3.0"
+            },
+            "suggest": {
+                "league/tactician-doctrine": "For doctrine transaction middleware",
+                "symfony/validator": "For command validator middleware"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Tactician\\Bundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rafael Dohms",
+                    "homepage": "http://doh.ms"
+                },
+                {
+                    "name": "Xander Smalbil",
+                    "email": "xander@videofunk.nl"
+                },
+                {
+                    "name": "Richard Tuin",
+                    "homepage": "http://www.rtuin.nl/"
+                },
+                {
+                    "name": "Ross Tuck",
+                    "email": "me@rosstuck.com"
+                }
+            ],
+            "description": "Bundle to integrate Tactician with Symfony projects",
+            "keywords": [
+                "bundle",
+                "symfony",
+                "tactician"
+            ],
+            "time": "2016-04-21 08:00:01"
         },
         {
             "name": "mongodb/mongodb",
@@ -1559,13 +1625,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/paragonie/random_compat/zipball/088c04e2f261c33bed6ca5245491cfca69195ccf",
                 "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.2.0"
@@ -1665,13 +1725,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
                 "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "type": "library",
             "autoload": {
@@ -1767,13 +1821,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/507a15f56fa7699f6cc8c2c7de4080b19ce22546",
                 "reference": "507a15f56fa7699f6cc8c2c7de4080b19ce22546",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.2",
@@ -1835,13 +1883,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/21696b0daa731064c23cfb694c60a2584a7b6e93",
                 "reference": "21696b0daa731064c23cfb694c60a2584a7b6e93",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "symfony/console": "~2.0|~3.0"
@@ -1885,13 +1927,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
                 "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
@@ -1944,13 +1980,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/e7caf4936c7be82bc6d68df87f1d23a0d5bf6e00",
                 "reference": "e7caf4936c7be82bc6d68df87f1d23a0d5bf6e00",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "monolog/monolog": "~1.18",
@@ -2010,13 +2040,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/6d58bceaeea2c2d3eb62503839b18646e161cd6b",
                 "reference": "6d58bceaeea2c2d3eb62503839b18646e161cd6b",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
@@ -2069,13 +2093,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/0f8dc2c45f69f8672379e9210bca4a115cd5146f",
                 "reference": "0f8dc2c45f69f8672379e9210bca4a115cd5146f",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
@@ -2133,13 +2151,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/dff51f72b0706335131b00a7f49606168c582594",
                 "reference": "dff51f72b0706335131b00a7f49606168c582594",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
@@ -2198,13 +2210,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/3edf57a8fbf9a927533344cef65ad7e1cf31030a",
                 "reference": "3edf57a8fbf9a927533344cef65ad7e1cf31030a",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
@@ -2260,13 +2266,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/a42f4b6b05ed458910f8af4c4e1121b0101b2d85",
                 "reference": "a42f4b6b05ed458910f8af4c4e1121b0101b2d85",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "paragonie/random_compat": "~1.0|~2.0",
@@ -2325,13 +2325,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-util/zipball/ef830ce3d218e622b221d6bfad42c751d974bf99",
                 "reference": "ef830ce3d218e622b221d6bfad42c751d974bf99",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
@@ -2383,13 +2377,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/5e1a90f28213231ceee19c953bbebc5b5b95c690",
                 "reference": "5e1a90f28213231ceee19c953bbebc5b5b95c690",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
@@ -2446,13 +2434,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/symfony/zipball/4478f047409028dc6e3ab320590f1247fec7a850",
                 "reference": "4478f047409028dc6e3ab320590f1247fec7a850",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.4",
@@ -2588,13 +2570,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/twigphp/Twig/zipball/3566d311a92aae4deec6e48682dc5a4528c4a512",
                 "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.2.7"
@@ -2689,6 +2665,51 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "mikefrancis/tokenizr",
+            "version": "v2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikefrancis/tokenizr.git",
+                "reference": "209d08109383ddcfa1f483f35d5d85591e6fd708"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikefrancis/tokenizr/zipball/209d08109383ddcfa1f483f35d5d85591e6fd708",
+                "reference": "209d08109383ddcfa1f483f35d5d85591e6fd708",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MikeFrancis\\Tokenizr\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Francis",
+                    "email": "mikeffrancis@gmail.com"
+                }
+            ],
+            "description": "PHP library to generate unique, URL friendly tokens",
+            "time": "2015-08-26 11:30:24"
+        },
         {
             "name": "myclabs/deep-copy",
             "version": "1.5.1",
@@ -3977,13 +3998,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/d1be460925376703a470a3ac6ec034eb7eab3892",
                 "reference": "d1be460925376703a470a3ac6ec034eb7eab3892",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "symfony/console": "~2.7|~3.0",
@@ -4035,13 +4050,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/eeb3bf9a195df7552fdda46f4724a9442d157413",
                 "reference": "eeb3bf9a195df7552fdda46f4724a9442d157413",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "http://toran.weca.mp/repo/packagist/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"

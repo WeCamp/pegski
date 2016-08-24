@@ -1,1 +1,4 @@
+imports:
+    - { resource: "@PegApiBundle/Resources/config/graphql.resolvers.yml" }
+
 services:

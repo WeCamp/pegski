@@ -1,0 +1,12 @@
+Query:
+  type: object
+  config:
+    description: "Some pegs"
+    fields:
+      pegs:
+        type: "[Peg]"
+#        args:
+#          episode:
+#              description: "If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode."
+#              type: "Episode"
+        resolve: "@=resolver('peg', [args])"

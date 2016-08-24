@@ -1,0 +1,17 @@
+# This implements the following type system shorthand:
+#   interface Peg {
+#     id: String!
+#     shortcode: String
+#   }
+Peg:
+  type: object
+  config:
+    description:  "You know… a clothes peg!"
+    fields:
+      id:
+        type:         "String!"
+        description:  "The ID of the peg"
+      shortcode:
+        type:         "String"
+        description:  "Shortcode used to access the peg"
+#    resolveType: "@=resolver('peg', [value])"

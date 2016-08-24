@@ -1,0 +1,5 @@
+services:
+  peg.api.resolver.peg:
+    class: Peg\Bundles\ApiBundle\GraphQL\Resolver\PegResolver
+    tags:
+      - { name: overblog_graphql.resolver, alias: "peg", method: "resolveType" }

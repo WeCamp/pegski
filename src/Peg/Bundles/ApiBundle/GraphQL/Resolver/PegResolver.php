@@ -4,6 +4,23 @@ namespace Peg\Bundles\ApiBundle\GraphQL\Resolver;
 
 class PegResolver
 {
+    /**
+     * @var DocumentManager
+     */
+    private $documentManager;
+
+
+    /**
+     * PegResolver constructor.
+     *
+     * @param DocumentManager $documentManager
+     */
+    public function __construct(DocumentManager $documentManager)
+    {
+        $this->documentManager = $documentManager;
+    }
+
+
     public function resolvePegs(): array
     {
         return [

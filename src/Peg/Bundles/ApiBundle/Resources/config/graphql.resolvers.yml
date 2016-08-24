@@ -9,6 +9,7 @@ services:
     tags:
       - { name: overblog_graphql.resolver, alias: "users", method: "resolveUsers" }
       - { name: overblog_graphql.resolver, alias: "user", method: "resolveUser" }
+      - { name: overblog_graphql.resolver, alias: "user_by_id", method: "resolveUserById" }
   peg.api.resolver.peg_event:
     class: Peg\Bundles\ApiBundle\GraphQL\Resolver\PegEventResolver
     tags:

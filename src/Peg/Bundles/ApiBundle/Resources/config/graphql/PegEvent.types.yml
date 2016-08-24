@@ -12,7 +12,7 @@ PegEvent:
       user:
         type:         "User"
         description:  "Who did it"
-        resolve: "@=resolver('user', [value['user_id']])"
+        resolve: "@=resolver('user_by_id', [value['user_id']])"
       happenedAt:
         type:         "String"
         description:  "When this happened"

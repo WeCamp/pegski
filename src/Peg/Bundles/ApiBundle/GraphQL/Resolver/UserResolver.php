@@ -26,4 +26,12 @@ class UserResolver
 
         return current($item) ?? [];
     }
+
+    public function resolveUserById(string $userId) {
+        $item = array_filter($this->resolveUsers(), function($item) use ($userId) {
+            return $item['id'] === $userId;
+        });
+
+        return current($item) ?? [];
+    }
 }

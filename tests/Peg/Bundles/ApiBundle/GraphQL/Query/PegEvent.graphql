@@ -1,0 +1,14 @@
+query GetPeg ($pegShortcode: String!) {
+  peg (shortcode: $pegShortcode) {
+    id
+    shortcode
+    pegEvents {
+      id
+      happenedAt
+      user {
+        email
+        id
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ class GraphQLTestCase extends WebTestCase
 {
     const GRAPHQL_ENDPOINT = '/graphql/';
 
-    protected function assertQuery($query, $jsonExpected, $token, $jsonVariables = [])
+    protected function assertQuery($query, $jsonExpected, $jsonVariables = [])
     {
         $client = static::createClient();
         $client->request(

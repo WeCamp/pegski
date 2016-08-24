@@ -1,0 +1,6 @@
+query GetPeg ($pegShortcode: String!) {
+  peg (shortcode: $pegShortcode) {
+    id
+    shortcode
+  }
+}

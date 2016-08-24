@@ -28,7 +28,25 @@ class GraphQLQueryTest extends GraphQLTestCase
         $this->assertEquals(Response::HTTP_BAD_REQUEST, $client->getResponse()->getStatusCode());
     }
 
-    public function testUserContactWithContact()
+    public function testPeg()
+    {
+        $this->runQueryFile(
+            self::QUERY_DIR . '/Peg.graphql',
+            self::QUERY_DIR . '/Peg.json',
+            ['pegShortcode' => 'ab5e8cfe']
+        );
+    }
+
+    public function testPegEvent()
+    {
+        $this->runQueryFile(
+            self::QUERY_DIR . '/PegEvent.graphql',
+            self::QUERY_DIR . '/PegEvent.json',
+            ['pegShortcode' => 'ab5e8cfe']
+        );
+    }
+
+    public function testGetAllPegs()
     {
         $this->runQueryFile(self::QUERY_DIR . '/GetAllPegs.graphql', self::QUERY_DIR . '/GetAllPegs.json');
     }

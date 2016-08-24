@@ -1,0 +1,18 @@
+{
+  "data": {
+    "peg": {
+      "id": "ab5e8cfe-4ffa-41af-91e4-db09108611af",
+      "shortcode": "ab5e8cfe",
+      "pegEvents": [
+        {
+          "id": "b614f268-6d73-462c-b4fd-708e804f1f91",
+          "happenedAt": "2016-08-24T10:10:10+02:00",
+          "user": {
+            "email": "roxana.m.cristian@gmail.com",
+            "id": "87baac55-3cb4-4d00-af3f-fc466faa899a"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -23,8 +23,8 @@ services:
     image: mongo:latest
     networks:
       - app_net
-    volumes_from:
-      - application
+    volumes:
+      - ./docker/mongodb/data:/data/db
 
 networks:
   app_net:

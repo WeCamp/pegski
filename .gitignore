@@ -16,3 +16,4 @@ composer.phar
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+/docker/mongodb/data

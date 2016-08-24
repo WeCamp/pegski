@@ -5,8 +5,9 @@ imports:
 services:
     peg.api_bundle.repository.doctrine.odm.peg:
         class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\PegRepository
+        factory: ['@doctrine.odm.mongodb.document_manager', getRepository]
         arguments:
-            - '@doctrine.odm.mongodb.document_manager'
+            - Peg\Bundles\ApiBundle\Document\Peg
 
     peg.util.short_code_generator:
         class: Peg\Util\ShortCodeGenerator

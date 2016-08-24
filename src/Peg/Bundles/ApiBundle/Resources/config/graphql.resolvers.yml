@@ -2,7 +2,7 @@ services:
   peg.api.resolver.peg:
     class: Peg\Bundles\ApiBundle\GraphQL\Resolver\PegResolver
     arguments:
-      - "@doctrine_mongodb.odm.document_manager"
+      - "@peg.api_bundle.repository.doctrine.odm.peg"
     tags:
       - { name: overblog_graphql.resolver, alias: "pegs", method: "resolvePegs" }
       - { name: overblog_graphql.resolver, alias: "peg", method: "resolvePeg" }

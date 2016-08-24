@@ -9,7 +9,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  *
  * @package Peg\Bundles\ApiBundle
  *
- * @MongoDB\Document
+ * @MongoDB\Document(repositoryClass="Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\PegRepository")
  */
 class Peg
 {

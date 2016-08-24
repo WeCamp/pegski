@@ -2,51 +2,44 @@
 
 namespace Peg\Bundles\ApiBundle\GraphQL\Resolver;
 
-use Doctrine\ODM\MongoDB\Cursor;
-use Doctrine\ODM\MongoDB\DocumentManager;
+use Overblog\GraphQLBundle\Error\UserWarning;
 use Peg\Bundles\ApiBundle\Document\Peg;
+use Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\PegRepository;
 
 class PegResolver
 {
     /**
-     * @var DocumentManager
+     * @var PegRepository
      */
-    private $documentManager;
+    private $repository;
 
 
     /**
      * PegResolver constructor.
      *
-     * @param DocumentManager $documentManager
+     * @param PegRepository $repository
      */
-    public function __construct(DocumentManager $documentManager)
+    public function __construct(PegRepository $repository)
     {
-        $this->documentManager = $documentManager;
+        $this->repository = $repository;
     }
 
 
     public function resolvePegs(): array
     {
-        $qb    = $this->documentManager->createQueryBuilder(Peg::class);
-        $query = $qb->sort('id', 'desc')
-                    ->getQuery();
-
-        /** @var Cursor $result */
-        $result = $query->getIterator();
-
-        return $result->toArray();
+        return $this->repository->findAll();
     }
 
 
-    public function resolvePeg(string $shortcode): array
+    public function resolvePeg(string $shortcode): Peg
     {
-        $item = array_filter(
-            $this->resolvePegs(),
-            function ($item) use ($shortcode) {
-                return $item['shortcode'] === $shortcode;
-            }
-        );
+        /** @var Peg|null $peg */
+        $peg = $this->repository->findOneBy(['shortcode' => $shortcode]);
 
-        return current($item) ?? [];
+        if (!$peg) {
+            throw new UserWarning("No peg found for shortcode '{$shortcode}'");
+        }
+
+        return $peg;
     }
 }

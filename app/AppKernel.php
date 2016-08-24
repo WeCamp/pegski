@@ -16,6 +16,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new League\Tactician\Bundle\TacticianBundle(),
             new Overblog\GraphQLBundle\OverblogGraphQLBundle(),
             new Peg\Bundles\ApiBundle\PegApiBundle(),
         ];

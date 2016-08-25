@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     'use strict';
 
@@ -25,9 +25,13 @@
         }
     }
 
-    function reqListener () {
+    function reqListener() {
         var response = JSON.parse(this.responseText);
-        console.log(response);
+        var pegsContainer = $('.pegski-recent-pegs');
+
+        response.map(function(peg){
+            pegsContainer.appendChild("<div>bla</div>");
+        });
     }
 
     function graphQLFetch(query, variables, callback) {
@@ -50,6 +54,8 @@
         const fetchPegsQuery = 'query Test { pegs { id, shortcode } }';
         graphQLFetch(fetchPegsQuery, {}, reqListener);
     }
+
+    fetchPegs();
 
     // listen for events
     window.addEventListener("load", callbackFunc);

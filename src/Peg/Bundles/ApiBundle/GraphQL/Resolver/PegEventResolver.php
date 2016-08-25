@@ -3,9 +3,31 @@
 namespace Peg\Bundles\ApiBundle\GraphQL\Resolver;
 
 use Peg\Bundles\ApiBundle\Document\Peg;
+use Peg\Repository\CommentEventRepositoryInterface;
+use Peg\Repository\LocationEventRepositoryInterface;
 
 class PegEventResolver
 {
+    /**
+     * @var CommentEventRepositoryInterface
+     */
+    private $commentEventRepository;
+
+    /**
+     * @var LocationEventRepositoryInterface
+     */
+    private $locationEventRepository;
+
+
+    public function __construct(
+        CommentEventRepositoryInterface $commentEventRepository,
+        LocationEventRepositoryInterface $locationEventRepository
+    ) {
+        $this->commentEventRepository  = $commentEventRepository;
+        $this->locationEventRepository = $locationEventRepository;
+    }
+
+
     public function resolveEventsByPeg(Peg $peg): array
     {
         return [

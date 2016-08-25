@@ -29,9 +29,15 @@
         var response = JSON.parse(this.responseText);
         var pegsContainer = $('.pegski-recent-pegs');
 
-        response.map(function(peg){
-            pegsContainer.appendChild("<div>bla</div>");
+        response.data.pegs.map(function(peg){
+            console.info(peg);
+            console.log(pegsContainer);
+            pegsContainer.append('<div class="col-md-3"><div class="pegski-peg-block" style=""><div class="pegski-peg-image" style="height: 200px; background-color: #333"><span style="color: #fff;">Picture!</span></div><div class="pegski-peg-description"><i class="fa fa-clock-o" aria-hidden="true"></i>      9:40 @ Veluwemeer by <span class="peg-owner">' +
+                peg.shortcode +
+                '</span></div></div></div>');
         });
+
+
     }
 
     function graphQLFetch(query, variables, callback) {
@@ -51,7 +57,7 @@
     }
 
     function fetchPegs() {
-        const fetchPegsQuery = 'query Test { pegs { id, shortcode } }';
+        const fetchPegsQuery = 'query Test { pegs { shortcode } }';
         graphQLFetch(fetchPegsQuery, {}, reqListener);
     }
 

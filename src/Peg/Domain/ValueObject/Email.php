@@ -32,7 +32,7 @@ class Email
         $this->value = $value;
     }
 
-    function __toString()
+    public function __toString()
     {
         return $this->value;
     }

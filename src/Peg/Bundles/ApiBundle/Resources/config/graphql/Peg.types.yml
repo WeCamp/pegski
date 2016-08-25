@@ -15,6 +15,7 @@ Peg:
         type:         "String"
         description:  "Shortcode used to access the peg"
       pegEvents:
+        # @todo Add Pagination
         type: "[PegEvent]"
         description: "Ohhh.. what happened to me?!"
         resolve: "@=resolver('peg_events', [value])"

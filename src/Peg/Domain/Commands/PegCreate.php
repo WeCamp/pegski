@@ -16,11 +16,8 @@ class PegCreate
         $this->peg = $peg;
     }
 
-
     public function getPeg(): Peg
     {
         return $this->peg;
     }
-
-
 }

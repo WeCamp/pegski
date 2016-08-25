@@ -30,5 +30,7 @@ class PegMutation
         $peg = Peg::register($this->shortCodeGenerator->generateUniqueShortCode());
 
         $this->commandBus->handle(new PegCreate($peg));
+
+        return $peg;
     }
 }

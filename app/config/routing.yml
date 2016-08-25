@@ -1,3 +1,7 @@
+web:
+    resource: "@PegWebBundle/Resources/config/routing.yml"
+    prefix:   /
+
 api:
   resource: "@PegApiBundle/Resources/config/routing.yml"
   prefix:   /

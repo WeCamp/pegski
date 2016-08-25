@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Overblog\GraphQLBundle\OverblogGraphQLBundle(),
             new Peg\Bundles\ApiBundle\PegApiBundle(),
             new Peg\Bundles\PersistenceBundle\PegPersistenceBundle(),
+            new Peg\Bundles\WebBundle\PegWebBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -6,18 +6,9 @@ PegEvent:
       id:
         type:         "String!"
         description:  "The ID of this event"
-      action:
+      description:
         type:         "String"
         description:  "What is this event"
-      user:
-        type:         "User"
-        description:  "Who did it"
-        resolve: "@=resolver('user_by_id', [value['user_id']])"
-      happenedAt:
+      location:
         type:         "String"
-        description:  "When this happened"
-      comments:
-        # @todo Add Pagination
-        type: "[Comment]"
-        description: "Comments on this peg event"
-        resolve: "@=resolver('comments', [value])"
+        description:  "and what was the location"

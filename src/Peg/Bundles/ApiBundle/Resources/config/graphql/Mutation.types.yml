@@ -6,7 +6,7 @@ Mutation:
         type: "Peg"
         resolve: "@=mutation('peg_mutation_create')"
       createPegLocationEvent:
-        type: "PegEvent"
+        type: "PegLocationEvent"
         args:
           location:
             type: "String!"

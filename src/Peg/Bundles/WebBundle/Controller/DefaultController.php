@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('PegWebBundle:Default:index.html.twig');
     }
+
+    public function timelineAction()
+    {
+        return $this->render('PegWebBundle:Default:timeline.html.twig');
+    }
 }

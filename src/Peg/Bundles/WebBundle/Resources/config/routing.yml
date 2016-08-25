@@ -1,3 +1,7 @@
 web_homepage:
     path:     /
     defaults: { _controller: PegWebBundle:Default:index }
+
+web_timeline:
+    path:     /timeline
+    defaults: { _controller: PegWebBundle:Default:timeline }

@@ -19,3 +19,9 @@ Peg:
         type: "[PegEvent]"
         description: "Ohhh.. what happened to me?!"
         resolve: "@=resolver('peg_events', [value])"
+      createPegLocationEvent:
+        type: "PegEvent"
+        args:
+          location:
+            type: "String!"
+        resolve: "@=mutation('peg_location_event_mutation_create', [value, args['location']])"

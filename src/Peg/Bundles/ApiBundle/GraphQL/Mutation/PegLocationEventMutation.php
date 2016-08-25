@@ -3,10 +3,10 @@
 namespace Peg\Bundles\ApiBundle\GraphQL\Mutation;
 
 use League\Tactician\CommandBus;
+use Peg\Bundles\ApiBundle\Document\Peg;
 use Peg\Domain\Commands\UpdateLocation;
-use Peg\Domain\Commands\UpdatePicture;
 
-final class PegEventMutation
+final class PegLocationEventMutation
 {
     /**
      * @var CommandBus
@@ -21,13 +21,11 @@ final class PegEventMutation
         $this->commandBus = $commandBus;
     }
 
-    public function updateLocation()
+    public function createPegLocationEvent(Peg $peg, string $location)
     {
-        
+        // create a new peg location
+        var_dump($peg);
+        var_dump($location);
     }
 
-    public function updatePictureUrl()
-    {
-
-    }
 }

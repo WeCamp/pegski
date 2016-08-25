@@ -7,12 +7,12 @@ services:
     tags:
       - { name: overblog_graphql.mutation, alias: "peg_mutation_create", method: "createPeg" }
 
-  peg.api.resolver.peg_event:
-    class: Peg\Bundles\ApiBundle\GraphQL\Mutation\PegEventMutation
+  peg.api.resolver.peg_location_event:
+    class: Peg\Bundles\ApiBundle\GraphQL\Mutation\PegLocationEventMutation
     arguments:
       - "@tactician.commandbus"
     tags:
-      - { name: overblog_graphql.mutation, alias: "peg_event_mutation_create", method: "createPegEvent" }
+      - { name: overblog_graphql.mutation, alias: "peg_location_event_mutation_create", method: "createPegLocationEvent" }
 
   peg.api.resolver.comment:
     class: Peg\Bundles\ApiBundle\GraphQL\Mutation\CommentMutation

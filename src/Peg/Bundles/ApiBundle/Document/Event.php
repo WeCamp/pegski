@@ -28,14 +28,14 @@ abstract class Event
     private $description;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @MongoDB\Field(type="string")
      */
     private $location;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @MongoDB\Field(type="string")
      */
@@ -55,41 +55,43 @@ abstract class Event
      */
     private $peg;
 
-    protected function __construct(
-        Peg $peg,
-        string $description,
-        string $location = null,
-        string $comment = null
-    ) {
-        $this->peg = $peg;
+
+    protected function __construct(Peg $peg, string $description, string $location = null, string $comment = null)
+    {
+        $this->peg         = $peg;
         $this->description = $description;
-        $this->location = $location;
-        $this->comment = $comment;
+        $this->location    = $location;
+        $this->comment     = $comment;
 
         $this->happenedAt = (new \DateTime())->format(\DateTime::ATOM);
     }
+
 
     public function getId() : string
     {
         return $this->id;
     }
 
+
     public function getPeg(): Peg
     {
         return $this->peg;
     }
+
 
     public function getDescription() : string
     {
         return $this->description;
     }
 
-    public function getLocation() : string
+
+    public function getLocation()
     {
         return $this->location;
     }
 
-    public function getComment() : string
+
+    public function getComment()
     {
         return $this->comment;
     }

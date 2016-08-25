@@ -11,6 +11,9 @@ Mutation:
           location:
             type: "String!"
         resolve: "@=mutation('peg_location_event_mutation_create', args['location'])"
-      createComment:
-        type: Query
-        resolve: "@=mutation('comment_mutation_create')"
+      createPegCommentEvent:
+        type: "PegCommentEvent"
+        args:
+          comment:
+            type: "String!"
+        resolve: "@=mutation('comment_mutation_create', args['comment'])"

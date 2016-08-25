@@ -42,6 +42,11 @@ class Comment
      */
     private $timestamp;
 
+    /**
+     * @var Event
+     */
+    private $event;
+
 
     public static function register(User $user,
         string $commentString
@@ -58,6 +63,16 @@ class Comment
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getEvent(): Event
+    {
+        return $this->event;
+    }
+
+    public function setEvent(Event $event)
+    {
+        $this->event = $event;
     }
 
 }

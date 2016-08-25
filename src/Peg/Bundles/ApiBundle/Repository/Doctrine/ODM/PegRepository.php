@@ -26,4 +26,16 @@ final class PegRepository extends DocumentRepository implements PegRepositoryInt
 
         return $collection->toArray();
     }
+
+    /**
+     * Find on peg by a short code.
+     *
+     * @param string $shortCode
+     *
+     * @return Peg
+     */
+    public function findOneByShortCode(string $shortCode)
+    {
+        return $this->dm->getRepository(Peg::class)->findOneBy(['shortcode' => $shortCode]);
+    }
 }

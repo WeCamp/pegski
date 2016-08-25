@@ -3,7 +3,7 @@ Mutation:
   config:
     fields:
       createPeg:
-        type: Query
+        type: "Peg"
         resolve: "@=mutation('peg_mutation_create')"
       createPegEvent:
         type: Query

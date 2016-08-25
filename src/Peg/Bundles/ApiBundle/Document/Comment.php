@@ -23,7 +23,7 @@ class Comment
     /**
      * @var User
      *
-     * @ReferenceOne(targetDocument="User")
+     * @MongoDB\ReferenceOne(targetDocument="User")
      */
     private $user;
 
@@ -44,13 +44,13 @@ class Comment
 
 
     public static function register(User $user,
-        string $comment
+        string $commentString
     ) : Comment
     {
         $comment = new self();
 
         $comment->user = $user;
-        $comment->comment = $comment;
+        $comment->comment = $commentString;
 
         return $comment;
     }

@@ -6,3 +6,17 @@ services:
       - "@peg.util.short_code_generator"
     tags:
       - { name: overblog_graphql.mutation, alias: "peg_mutation_create", method: "createPeg" }
+
+  peg.api.resolver.peg_event:
+    class: Peg\Bundles\ApiBundle\GraphQL\Mutation\PegEventMutation
+    arguments:
+      - "@tactician.commandbus"
+    tags:
+      - { name: overblog_graphql.mutation, alias: "peg_event_mutation_create", method: "createPegEvent" }
+
+  peg.api.resolver.comment:
+    class: Peg\Bundles\ApiBundle\GraphQL\Mutation\CommentMutation
+    arguments:
+      - "@tactician.commandbus"
+    tags:
+      - { name: overblog_graphql.mutation, alias: "comment_mutation_create", method: "createComment" }

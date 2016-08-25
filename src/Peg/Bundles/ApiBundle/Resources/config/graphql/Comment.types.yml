@@ -1,14 +1,14 @@
 PegEvent:
   type: object
   config:
-    description:  "You know… a peg do stuff"
+    description:  "Give a comment on a peg event"
     fields:
       id:
         type:         "String!"
-        description:  "The ID of this event"
-      action:
+        description:  "The ID of this comment"
+      comment:
         type:         "String"
-        description:  "What is this event"
+        description:  "The comment itself"
       user:
         type:         "User"
         description:  "Who did it"
@@ -16,8 +16,3 @@ PegEvent:
       happenedAt:
         type:         "String"
         description:  "When this happened"
-      comments:
-        # @todo Add Pagination
-        type: "[Comment]"
-        description: "Comments on this peg event"
-        resolve: "@=resolver('comments', [value])"

@@ -20,3 +20,9 @@ services:
     class: Peg\Bundles\ApiBundle\GraphQL\Resolver\PegEventResolver
     tags:
       - { name: overblog_graphql.resolver, alias: "peg_events", method: "resolveEventsByPeg" }
+
+
+  peg.api.resolver.comment:
+    class: Peg\Bundles\ApiBundle\GraphQL\Resolver\CommentResolver
+    tags:
+      - { name: overblog_graphql.resolver, alias: "comments", method: "resolveCommentsByPegEvent" }

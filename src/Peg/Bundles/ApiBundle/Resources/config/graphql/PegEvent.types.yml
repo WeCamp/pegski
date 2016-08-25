@@ -12,3 +12,6 @@ PegEvent:
       location:
         type:         "String"
         description:  "and what was the location"
+      comment:
+        type:         "String"
+        description:  "you know...stuff you said"

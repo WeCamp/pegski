@@ -25,7 +25,7 @@ services:
         arguments:
             - '@doctrine.odm.mongodb.document_manager'
 
-    peg.api_bundle.repository.doctrine.odm.picture_event:
-        class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\PictureEventRepository
+    peg.api_bundle.repository.doctrine.odm.comment_event:
+        class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\CommentEventRepository
         arguments:
             - '@doctrine.odm.mongodb.document_manager'

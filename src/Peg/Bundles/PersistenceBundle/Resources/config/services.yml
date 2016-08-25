@@ -14,10 +14,10 @@ services:
     tags:
       - { name: tactician.handler, command: Peg\Domain\Commands\UpdateLocation }
 
-  peg.persistence.command.update_picture.handler:
-    class: Peg\Domain\Commands\UpdateLocationHandler
+  peg.persistence.command.add_comment.handler:
+    class: Peg\Domain\Commands\AddCommentHandler
     arguments:
       - "@peg.api_bundle.repository.doctrine.odm.peg"
-      - "@peg.api_bundle.repository.doctrine.odm.picture_event"
+      - "@peg.api_bundle.repository.doctrine.odm.comment_event"
     tags:
-      - { name: tactician.handler, command: Peg\Domain\Commands\UpdatePicture }
+      - { name: tactician.handler, command: Peg\Domain\Commands\AddComment }

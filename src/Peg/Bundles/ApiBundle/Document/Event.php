@@ -35,9 +35,7 @@ abstract class Event
     private $location;
 
     /**
-     * @var Comment
-     *
-     * @MongoDB\ReferenceOne(targetDocument="Comment", cascade='all')
+     * @var string
      */
     protected $comment;
 
@@ -52,12 +50,12 @@ abstract class Event
         Peg $peg,
         string $description,
         string $location = null,
-        Comment $comment = null
+        string $comment = null
     ) {
         $this->peg = $peg;
         $this->description = $description;
         $this->location = $location;
-        $this->setComment($comment);
+        $this->comment = $comment;
     }
 
     public function getId() : string
@@ -80,14 +78,9 @@ abstract class Event
         return $this->location;
     }
 
-    public function getComment() : Comment
+    public function getComment() : string
     {
         return $this->comment;
     }
 
-    private function setComment(Comment $comment)
-    {
-        $comment->setEvent($this);
-        $this->comment = $comment;
-    }
 }

@@ -21,13 +21,6 @@ class PictureEvent extends Event implements PictureEventInterface
      */
     private $pictureUrl;
 
-    /**
-     * @var Comment
-     *
-     * @MongoDB\ReferenceMany(targetDocument="Comment")
-     */
-    protected $comment;
-
     protected function __construct(
         Peg $peg,
         string $description,

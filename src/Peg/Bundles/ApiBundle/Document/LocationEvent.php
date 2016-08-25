@@ -13,13 +13,6 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  */
 class LocationEvent extends Event
 {
-    /**
-     * @var Comment
-     *
-     * @MongoDB\ReferenceMany(targetDocument="Comment")
-     */
-    protected $comment;
-
     public static function create(
         Peg $peg,
         string $description,

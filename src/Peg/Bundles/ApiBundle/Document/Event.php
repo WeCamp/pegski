@@ -9,7 +9,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  *
  * @package Peg\Bundles\ApiBundle
  *
- * @MongoDB\Document(repositoryClass="Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\EventRepository")
+ * @MongoDB\MappedSuperclass
  */
 class Event
 {
@@ -20,7 +20,6 @@ class Event
      */
     private $id;
 
-
     /**
      * @var string
      *
@@ -29,88 +28,29 @@ class Event
     private $description;
 
     /**
-     * @var string
-     *
-     * @MongoDB\Field(type="string")
+     * @var Comment
      */
-    private $pictureUrl;
-
-    /**
-     * @var string
-     *
-     * @MongoDB\Field(type="string")
-     */
-    private $location;
-
-//    /**
-//     *
-//     * @ReferenceMany(targetDocument="Comment")
-//     */
-//    private $comment;
+    protected $comment;
 
     protected function __construct(
-        string $description,
-        string $pictureUrl = '',
-        string $location = ''
-)
-    {
+        string $description
+    ) {
         $this->description = $description;
-        $this->pictureUrl = $pictureUrl;
-        $this->location = $location;
     }
 
-    public static function register(string $description) : Event
-    {
-        return new self($description);
-    }
-
-    public static function registerPicture(
-        string $description,
-        string $pictureUrl
-    ) : Event
-    {
-        return new self(
-            $description,
-            $pictureUrl
-        );
-    }
-
-    public static function registerLocation(
-        string $description,
-        string $pictureUrl,
-        string $location
-    ) : Event
-    {
-        return new self(
-            $description,
-            $pictureUrl,
-            $location
-        );
-    }
-
-    public function getId(): string
+    public function getId() : string
     {
         return $this->id;
     }
 
-    public function getDescription(): string
+    public function getDescription() : string
     {
         return $this->description;
     }
 
-    public function getPictureUrl(): string
+    public function getComment() : Comment
     {
-        return $this->pictureUrl;
+        return $this->comment;
     }
-
-    public function getLocation(): string
-    {
-        return $this->location;
-    }
-
-//    public function getComment()
-//    {
-//        return $this->comment;
-//    }
 
 }

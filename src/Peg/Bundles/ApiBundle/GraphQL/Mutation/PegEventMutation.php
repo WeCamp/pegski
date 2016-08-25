@@ -19,7 +19,12 @@ final class PegEventMutation
         $this->commandBus = $commandBus;
     }
 
-    public function createPegEvent()
+    public function updateLocation()
+    {
+
+    }
+
+    public function updatePictureUrl()
     {
 
     }

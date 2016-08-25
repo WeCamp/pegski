@@ -1,74 +1,55 @@
-{% extends 'PegWebBundle::base.html.twig' %}
+{% extends 'PegWebBundle::bootstrap/base.html.twig' %}
 
-{% block content %}
-    <section class="intro">
-        <div class="container">
-            <h1>pegski↓</h1>
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <center><h3>Recent pegs</h3></center>
         </div>
-    </section>
-
-    <section class="timeline">
-        <ul class="list">
-            <li class="in-view">
-                <div>
-                    <time>1934</time> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+    </div>
+    <div class="row pegski-recent-pegs">
+        <div class="col-md-3">
+            <div class="pegski-peg-block" style="">
+                <div class="pegski-peg-image" style="height: 200px; background-color: #333">
+                    <span style="color: #fff;">Picture!</span>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <time>1937</time> Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi. Suspendisse finibus mauris et bibendum molestie. Aenean ex augue, varius et pulvinar in, pretium non nisi.
+                <div class="pegski-peg-description">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    9:40 @ Veluwemeer by <span class="peg-owner">GJSXU</span>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <time>1940</time> Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor, at pulvinar tortor ex eget ligula. Integer eu dapibus arcu, sit amet sollicitudin eros.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="pegski-peg-block" style="">
+                <div class="pegski-peg-image" style="height: 200px; background-color: #333">
+                    <span style="color: #fff;">Picture!</span>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <time>1943</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                <div class="pegski-peg-description">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    9:40 @ Veluwemeer by <span class="peg-owner">GJSXU</span>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <time>1946</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="pegski-peg-block" style="">
+                <div class="pegski-peg-image" style="height: 200px; background-color: #333">
+                    <span style="color: #fff;">Picture!</span>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <time>1956</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                <div class="pegski-peg-description">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    9:40 @ Veluwemeer by <span class="peg-owner">GJSXU</span>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <time>1957</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="pegski-peg-block" style="">
+                <div class="pegski-peg-image" style="height: 200px; background-color: #333">
+                    <span style="color: #fff;">Picture!</span>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <time>1967</time> Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat eget porta faucibus, euismod quis ante.
+                <div class="pegski-peg-description">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    9:40 @ Veluwemeer by <span class="peg-owner">GJSXU</span>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <time>1977</time> Vestibulum porttitor lorem sed pharetra dignissim. Nulla maximus, dui a tristique iaculis, quam dolor convallis enim, non dignissim ligula ipsum a turpis.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1985</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>2000</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>2005</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-        </ul>
-    </section>
+            </div>
+        </div>
+    </div>
 {% endblock %}

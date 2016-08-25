@@ -1,34 +1,58 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font: normal 16px/1.5 "Helvetica Neue", sans-serif;
-    background: #456990;
-    color: #fff;
+    background: #003366;
+    color: #ffffff;
     overflow-x: hidden;
     padding-bottom: 50px;
-}  /* INTRO SECTION
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.intro {
-    background: #F45B69;
-    padding: 100px 0;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+.pegski-navbar {
+    padding-top: 20px;
+    background: #003366;
+    color: #ffffff;
+    border: none;
+}
+
+.pegski-navbar a {
+    color: #ffffff !important;
+}
+
+.pegski-navbar .navbar-nav .active a,
+.pegski-navbar .navbar-nav .active a:hover,
+.pegski-navbar .navbar-nav .active a:active,
+.pegski-navbar .navbar-nav a:hover,
+.pegski-navbar .navbar-nav a:active {
+    background-color: transparent !important;
+    font-weight: bold;
+}
+
+.content-container {
+    padding-top: 100px;
+}
+
+.content-container .logo {
+    padding-bottom: 50px;
+}
+
+.pegski-recent-pegs .pegski-peg-block {
+    margin: 5%;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 0 0 6px 6px;
+}
+
+.pegski-recent-pegs .pegski-peg-image {
+
+}
+
+.pegski-recent-pegs .pegski-peg-description {
+    margin: 10px 0;
     text-align: center;
+    color: #333;
 }
 
-h1 {
-    font-size: 2.5rem;
+.pegski-recent-pegs .pegski-peg-description .peg-owner {
+    font-weight: bold;
+    font-style: italic;
 }
 
 
@@ -36,7 +60,7 @@ h1 {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline ul {
-    background: #456990;
+    background: #003366;
     padding: 50px 0;
 }
 

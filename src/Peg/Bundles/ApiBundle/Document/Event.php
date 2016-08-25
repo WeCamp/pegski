@@ -94,4 +94,12 @@ abstract class Event
         return $this->comment;
     }
 
+
+    /**
+     * @return mixed
+     */
+    public function getHappenedAt()
+    {
+        return $this->happenedAt;
+    }
 }

@@ -5,3 +5,9 @@ Mutation:
       createPeg:
         type: Query
         resolve: "@=mutation('peg_mutation_create')"
+      createPegEvent:
+        type: Query
+        resolve: "@=mutation('peg_event_mutation_create')"
+      createComment:
+        type: Query
+        resolve: "@=mutation('comment_mutation_create')"

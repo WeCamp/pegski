@@ -59,14 +59,33 @@ class Event
         $this->location = $location;
     }
 
-    /**
-     * Register a new event
-     *
-     * @return Event
-     */
-    public static function register(string $description)
+    public static function register(string $description) : Event
     {
         return new self($description);
+    }
+
+    public static function registerPicture(
+        string $description,
+        string $pictureUrl
+    ) : Event
+    {
+        return new self(
+            $description,
+            $pictureUrl
+        );
+    }
+
+    public static function registerLocation(
+        string $description,
+        string $pictureUrl,
+        string $location
+    ) : Event
+    {
+        return new self(
+            $description,
+            $pictureUrl,
+            $location
+        );
     }
 
     public function getId(): string

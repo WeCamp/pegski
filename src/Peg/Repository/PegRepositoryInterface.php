@@ -15,7 +15,7 @@ interface PegRepositoryInterface
      *
      * @param string $shortCode
      *
-     * @return Peg
+     * @return Peg|null
      */
     public function findOneByShortCode(string $shortCode);
 

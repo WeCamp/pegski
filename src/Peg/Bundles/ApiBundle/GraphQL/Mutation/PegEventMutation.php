@@ -3,6 +3,7 @@
 namespace Peg\Bundles\ApiBundle\GraphQL\Mutation;
 
 use League\Tactician\CommandBus;
+use Peg\Domain\Commands\UpdateLocation;
 
 final class PegEventMutation
 {
@@ -21,7 +22,7 @@ final class PegEventMutation
 
     public function updateLocation()
     {
-
+        
     }
 
     public function updatePictureUrl()

@@ -29,19 +29,22 @@ class LocationEvent extends Event
     protected $comment;
 
     protected function __construct(
+        Peg $peg,
         string $description,
         string $location
     ) {
-        parent::__construct($description);
+        parent::__construct($peg, $description);
+
         $this->location = $location;
     }
 
     public static function updateLocation(
+        Peg $peg,
         string $description,
         string $location
     ) : LocationEvent
     {
-        return new self($description, $location);
+        return new self($peg, $description, $location);
     }
 
     public function getLocation() : string

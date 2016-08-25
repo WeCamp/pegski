@@ -19,3 +19,13 @@ services:
         class: Peg\Util\ShortCodeGenerator
         arguments:
             - '@peg.api_bundle.repository.doctrine.odm.peg'
+
+    peg.api_bundle.repository.doctrine.odm.location_event:
+        class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\LocationEventRepository
+        arguments:
+            - '@doctrine.odm.mongodb.document_manager'
+
+    peg.api_bundle.repository.doctrine.odm.picture_event:
+        class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\PictureEventRepository
+        arguments:
+            - '@doctrine.odm.mongodb.document_manager'

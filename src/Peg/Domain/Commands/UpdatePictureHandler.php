@@ -1,0 +1,52 @@
+<?php
+
+namespace Peg\Domain\Commands;
+
+use Doctrine\ODM\MongoDB\DocumentManager;
+use Peg\Bundles\ApiBundle\Document\PictureEvent;
+use Peg\Bundles\ApiBundle\Document\Peg;
+use Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\PictureEventRepository;
+use Peg\Domain\Exception\PegNotFoundException;
+use Peg\Repository\PegRepositoryInterface;
+
+final class UpdatePictureHandler extends EventHandler
+{
+    /**
+     * @var PictureEventRepository
+     */
+    private $eventRepository;
+
+    /**
+     * @var PegRepositoryInterface
+     */
+    private $pegRepository;
+
+    /**
+     * @param PegRepositoryInterface $pegRepository
+     * @param PictureEventRepository $eventRepository
+     */
+    public function __construct(PegRepositoryInterface $pegRepository, PictureEventRepository $eventRepository)
+    {
+        parent::__construct($pegRepository);
+
+        $this->eventRepository = $eventRepository;
+    }
+
+    /**
+     * Handle the update picture command.
+     *
+     * @param UpdatePicture $command
+     *
+     * @throws PegNotFoundException
+     */
+    public function handle(UpdatePicture $command)
+    {
+        $event = PictureEvent::updatePicture(
+            $this->getPegByShortCode($command->getShortCode()),
+            $command->getDescription(),
+            $command->getPicture()
+        );
+
+        $this->eventRepository->save($event);
+    }
+}

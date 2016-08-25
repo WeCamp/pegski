@@ -32,15 +32,29 @@ class Event
      */
     protected $comment;
 
+    /**
+     * @var Peg
+     *
+     * @MongoDB\ReferenceOne(targetDocument="Peg")
+     */
+    private $peg;
+
     protected function __construct(
+        Peg $peg,
         string $description
     ) {
+        $this->peg = $peg;
         $this->description = $description;
     }
 
     public function getId() : string
     {
         return $this->id;
+    }
+
+    public function getPeg(): Peg
+    {
+        return $this->peg;
     }
 
     public function getDescription() : string

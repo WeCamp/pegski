@@ -5,3 +5,19 @@ services:
       - "@doctrine.odm.mongodb.document_manager"
     tags:
       - { name: tactician.handler, command: Peg\Domain\Commands\PegCreate }
+
+  peg.persistence.command.update_location.handler:
+    class: Peg\Domain\Commands\UpdateLocationHandler
+    arguments:
+      - "@peg.api_bundle.repository.doctrine.odm.peg"
+      - "@peg.api_bundle.repository.doctrine.odm.location_event"
+    tags:
+      - { name: tactician.handler, command: Peg\Domain\Commands\UpdateLocation }
+
+  peg.persistence.command.update_picture.handler:
+    class: Peg\Domain\Commands\UpdateLocationHandler
+    arguments:
+      - "@peg.api_bundle.repository.doctrine.odm.peg"
+      - "@peg.api_bundle.repository.doctrine.odm.picture_event"
+    tags:
+      - { name: tactician.handler, command: Peg\Domain\Commands\UpdatePicture }

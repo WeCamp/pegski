@@ -36,8 +36,17 @@ abstract class Event
 
     /**
      * @var string
+     *
+     * @MongoDB\Field(type="string")
      */
-    protected $comment;
+    private $comment;
+
+    /**
+     * @var string
+     *
+     * @MongoDB\Field(type="string")
+     */
+    private $happenedAt;
 
     /**
      * @var Peg
@@ -56,6 +65,8 @@ abstract class Event
         $this->description = $description;
         $this->location = $location;
         $this->comment = $comment;
+
+        $this->happenedAt = (new \DateTime())->format(\DateTime::ATOM);
     }
 
     public function getId() : string

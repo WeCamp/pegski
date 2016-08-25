@@ -15,3 +15,6 @@ PegEvent:
       comment:
         type:         "String"
         description:  "you know...stuff you said"
+      happenedAt:
+        type:         "String"
+        description:  "When it happened, rights?"

@@ -36,7 +36,7 @@ final class UpdateLocationHandler extends EventHandler
      */
     public function handle(UpdateLocation $command)
     {
-        $event = LocationEvent::updateLocation(
+        $event = LocationEvent::create(
             $this->getPegByShortCode($command->getShortCode()),
             $command->getDescription(),
             $command->getLocation()

@@ -41,10 +41,11 @@ final class UpdatePictureHandler extends EventHandler
      */
     public function handle(UpdatePicture $command)
     {
-        $event = PictureEvent::updatePicture(
+        $event = PictureEvent::create(
             $this->getPegByShortCode($command->getShortCode()),
             $command->getDescription(),
-            $command->getPicture()
+            $command->getPicture(),
+            $command->getLocation()
         );
 
         $this->eventRepository->save($event);

@@ -11,7 +11,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  *
  * @MongoDB\MappedSuperclass
  */
-class Event
+abstract class Event
 {
     /**
      * @var string
@@ -28,6 +28,13 @@ class Event
     private $description;
 
     /**
+     * @var string
+     *
+     * @MongoDB\Field(type="string")
+     */
+    private $location;
+
+    /**
      * @var Comment
      */
     protected $comment;
@@ -41,10 +48,12 @@ class Event
 
     protected function __construct(
         Peg $peg,
-        string $description
+        string $description,
+        string $location = null
     ) {
         $this->peg = $peg;
         $this->description = $description;
+        $this->location = $location;
     }
 
     public function getId() : string
@@ -62,9 +71,13 @@ class Event
         return $this->description;
     }
 
+    public function getLocation() : string
+    {
+        return $this->location;
+    }
+
     public function getComment() : Comment
     {
         return $this->comment;
     }
-
 }

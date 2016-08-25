@@ -13,14 +13,6 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  */
 class LocationEvent extends Event
 {
-
-    /**
-     * @var string
-     *
-     * @MongoDB\Field(type="string")
-     */
-    private $location;
-
     /**
      * @var Comment
      *
@@ -28,17 +20,7 @@ class LocationEvent extends Event
      */
     protected $comment;
 
-    protected function __construct(
-        Peg $peg,
-        string $description,
-        string $location
-    ) {
-        parent::__construct($peg, $description);
-
-        $this->location = $location;
-    }
-
-    public static function updateLocation(
+    public static function create(
         Peg $peg,
         string $description,
         string $location
@@ -46,10 +28,4 @@ class LocationEvent extends Event
     {
         return new self($peg, $description, $location);
     }
-
-    public function getLocation() : string
-    {
-        return $this->location;
-    }
-
 }

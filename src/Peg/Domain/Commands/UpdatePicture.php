@@ -20,15 +20,22 @@ final class UpdatePicture
     private $picture;
 
     /**
+     * @var string|null
+     */
+    private $location;
+
+    /**
      * @param string $shortCode
      * @param string $description
      * @param string $picture
+     * @param string|null $location
      */
-    public function __construct(string $shortCode, string $description, string $picture)
+    public function __construct(string $shortCode, string $description, string $picture, string $location = null)
     {
         $this->shortCode = $shortCode;
         $this->description = $description;
         $this->picture = $picture;
+        $this->location = $location;
     }
 
     /**
@@ -53,5 +60,13 @@ final class UpdatePicture
     public function getPicture(): string
     {
         return $this->picture;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getLocation()
+    {
+        return $this->location;
     }
 }

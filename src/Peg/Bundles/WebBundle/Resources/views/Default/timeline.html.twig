@@ -1,68 +1,60 @@
 {% extends 'PegWebBundle::bootstrap/base.html.twig' %}
 
+{% macro timeline_item(inverted, badge, title, time, text) %}
+    <li {% if inverted is not null and inverted == true %}class="timeline-inverted"{% endif %}>
+        <div class="timeline-avatar">
+            <img src="https://nl.gravatar.com/userimage/53532088/935529cd68aca7983949ebcc44355078.jpg?size=200" class="img-responsive img-circle">
+        </div>
+        <div class="timeline-badge"><i class="glyphicon glyphicon-{{ badge|default('check') }}"></i></div>
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                <h4 class="timeline-title">{{ title }}</h4>
+                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{ time }}</small></p>
+            </div>
+            <div class="timeline-body">
+                {{ text|raw }}
+            </div>
+        </div>
+    </li>
+{% endmacro %}
+
 {% block body %}
-    <section class="timeline">
-        <ul class="list">
-            <li class="in-view">
-                <div>
-                    <time>1934</time> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1937</time> Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi. Suspendisse finibus mauris et bibendum molestie. Aenean ex augue, varius et pulvinar in, pretium non nisi.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1940</time> Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor, at pulvinar tortor ex eget ligula. Integer eu dapibus arcu, sit amet sollicitudin eros.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1943</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1946</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1956</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1957</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1967</time> Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat eget porta faucibus, euismod quis ante.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1977</time> Vestibulum porttitor lorem sed pharetra dignissim. Nulla maximus, dui a tristique iaculis, quam dolor convallis enim, non dignissim ligula ipsum a turpis.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>1985</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>2000</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>2005</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-                </div>
-            </li>
-        </ul>
-    </section>
+    <ul class="timeline">
+        {{ _self.timeline_item(
+            false,
+            'check',
+            'Mussum ipsum cacilds',
+            '11 hours ago via Twitter',
+            '<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                        Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                '
+        ) }}
+        {{ _self.timeline_item(
+            true,
+            'check',
+            'Mussum ipsum cacilds',
+            '11 hours ago via Twitter',
+            '<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                        Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                '
+        ) }}
+        {{ _self.timeline_item(
+            false,
+            'check',
+            'Mussum ipsum cacilds',
+            '11 hours ago via Twitter',
+            '<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                        Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                '
+        ) }}
+        {{ _self.timeline_item(
+            true,
+            'check',
+            'Mussum ipsum cacilds',
+            '11 hours ago via Twitter',
+            '<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
+                        Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                '
+        ) }}
+    </ul>
 {% endblock %}

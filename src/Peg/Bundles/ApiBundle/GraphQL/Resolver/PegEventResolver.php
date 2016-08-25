@@ -2,9 +2,11 @@
 
 namespace Peg\Bundles\ApiBundle\GraphQL\Resolver;
 
+use Peg\Bundles\ApiBundle\Document\Peg;
+
 class PegEventResolver
 {
-    public function resolveEventsByPeg(array $peg): array
+    public function resolveEventsByPeg(Peg $peg): array
     {
         return [
             [

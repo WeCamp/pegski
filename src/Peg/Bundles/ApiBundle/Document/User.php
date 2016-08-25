@@ -24,7 +24,7 @@ class User
     /**
      * @var Email
      *
-     * @MongoDB\Field(value="email", type="string")
+     * @MongoDB\Field(value="email", type="email")
      */
     private $email;
 

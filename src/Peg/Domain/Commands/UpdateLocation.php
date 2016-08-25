@@ -2,56 +2,25 @@
 
 namespace Peg\Domain\Commands;
 
+use Peg\Bundles\ApiBundle\Document\LocationEvent;
+
 final class UpdateLocation
 {
-    /**
-     * @var string
-     */
-    private $shortCode;
 
     /**
-     * @var string
+     * @var LocationEvent
      */
-    private $description;
+    private $pegEvent;
 
-    /**
-     * @var string
-     */
-    private $location;
 
-    /**
-     * @param string $pegUuid
-     * @param string $description
-     * @param string $location
-     */
-    public function __construct(string $shortCode, string $description, string $location)
+    public function __construct(LocationEvent $pegEvent)
     {
-        $this->shortCode = $shortCode;
-        $this->description = $description;
-        $this->location = $location;
+        $this->pegEvent = $pegEvent;
     }
 
-    /**
-     * @return string
-     */
-    public function getShortCode(): string
+    public function getPegEvent(): LocationEvent
     {
-        return $this->shortCode;
+        return $this->pegEvent;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLocation(): string
-    {
-        return $this->location;
-    }
 }

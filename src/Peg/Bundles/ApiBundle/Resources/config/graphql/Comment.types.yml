@@ -1,4 +1,4 @@
-PegEvent:
+Comment:
   type: object
   config:
     description:  "Give a comment on a peg event"

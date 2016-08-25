@@ -22,10 +22,12 @@ services:
 
     peg.api_bundle.repository.doctrine.odm.location_event:
         class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\LocationEventRepository
+        factory: ["@doctrine.odm.mongodb.document_manager", "getRepository"]
         arguments:
-            - '@doctrine.odm.mongodb.document_manager'
+            - 'Peg\Bundles\ApiBundle\Document\LocationEvent'
 
     peg.api_bundle.repository.doctrine.odm.comment_event:
         class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\CommentEventRepository
+        factory: ["@doctrine.odm.mongodb.document_manager", "getRepository"]
         arguments:
-            - '@doctrine.odm.mongodb.document_manager'
+            - 'Peg\Bundles\ApiBundle\Document\CommentEvent'

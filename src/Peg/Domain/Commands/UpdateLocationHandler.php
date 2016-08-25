@@ -2,9 +2,6 @@
 
 namespace Peg\Domain\Commands;
 
-use Doctrine\ODM\MongoDB\DocumentManager;
-use Peg\Bundles\ApiBundle\Document\LocationEvent;
-use Peg\Bundles\ApiBundle\Document\Peg;
 use Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\LocationEventRepository;
 use Peg\Domain\Exception\PegNotFoundException;
 use Peg\Repository\PegRepositoryInterface;
@@ -23,7 +20,6 @@ final class UpdateLocationHandler extends EventHandler
     public function __construct(PegRepositoryInterface $pegRepository, LocationEventRepository $eventRepository)
     {
         parent::__construct($pegRepository);
-
         $this->eventRepository = $eventRepository;
     }
 
@@ -31,8 +27,6 @@ final class UpdateLocationHandler extends EventHandler
      * Handle the update location command.
      *
      * @param UpdateLocation $command
-     *
-     * @throws PegNotFoundException
      */
     public function handle(UpdateLocation $command)
     {

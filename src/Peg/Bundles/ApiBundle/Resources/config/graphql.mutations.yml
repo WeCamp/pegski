@@ -1,5 +1,5 @@
 services:
-  peg.api.resolver.peg:
+  peg.api.mutation.peg:
     class: Peg\Bundles\ApiBundle\GraphQL\Mutation\PegMutation
     arguments:
       - "@tactician.commandbus"
@@ -7,14 +7,14 @@ services:
     tags:
       - { name: overblog_graphql.mutation, alias: "peg_mutation_create", method: "createPeg" }
 
-  peg.api.resolver.peg_location_event:
+  peg.api.mutation.peg_location_event:
     class: Peg\Bundles\ApiBundle\GraphQL\Mutation\PegLocationEventMutation
     arguments:
       - "@tactician.commandbus"
     tags:
       - { name: overblog_graphql.mutation, alias: "peg_location_event_mutation_create", method: "createPegLocationEvent" }
 
-  peg.api.resolver.comment:
+  peg.api.mutation.comment:
     class: Peg\Bundles\ApiBundle\GraphQL\Mutation\CommentMutation
     arguments:
       - "@tactician.commandbus"

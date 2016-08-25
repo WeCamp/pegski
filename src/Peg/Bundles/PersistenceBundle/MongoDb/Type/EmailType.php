@@ -7,6 +7,8 @@ use Peg\Domain\ValueObject\Email;
 
 class EmailType extends Type
 {
+    const NAME = 'email';
+
     public function convertToDatabaseValue($value)
     {
         if (is_null($value)) {

@@ -32,14 +32,7 @@ class Peg
         $this->shortcode = $shortCode;
     }
 
-    /**
-     * Register a new peg.
-     *
-     * @param string $shortCode
-     *
-     * @return Peg
-     */
-    public static function register(string $shortCode)
+    public static function register(string $shortCode) : Peg
     {
         return new self($shortCode);
     }

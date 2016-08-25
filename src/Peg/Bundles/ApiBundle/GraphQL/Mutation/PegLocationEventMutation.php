@@ -3,6 +3,8 @@
 namespace Peg\Bundles\ApiBundle\GraphQL\Mutation;
 
 use League\Tactician\CommandBus;
+use Overblog\GraphQLBundle\Error\UserWarning;
+use Peg\Bundles\ApiBundle\Document\LocationEvent;
 use Peg\Bundles\ApiBundle\Document\Peg;
 use Peg\Domain\Commands\UpdateLocation;
 
@@ -21,11 +23,18 @@ final class PegLocationEventMutation
         $this->commandBus = $commandBus;
     }
 
-    public function createPegLocationEvent(Peg $peg, string $location)
+    public function createPegLocationEvent(Peg $peg, string $location) : LocationEvent
     {
-        // create a new peg location
-        var_dump($peg);
-        var_dump($location);
+        $pegEvent = LocationEvent::create($peg, "added a location", $location);
+        $command = new UpdateLocation($pegEvent);
+
+        try {
+            $this->commandBus->handle($command);
+        } catch (\Exception $e) {
+            throw new UserWarning($e->getMessage());
+        }
+
+        return $pegEvent;
     }
 
 }

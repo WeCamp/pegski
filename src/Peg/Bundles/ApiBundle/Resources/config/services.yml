@@ -31,3 +31,9 @@ services:
         factory: ["@doctrine.odm.mongodb.document_manager", "getRepository"]
         arguments:
             - 'Peg\Bundles\ApiBundle\Document\CommentEvent'
+
+    peg.api_bundle.repository.doctrine.odm.picture_event:
+        class: Peg\Bundles\ApiBundle\Repository\Doctrine\ODM\PictureEventRepository
+        factory: ["@doctrine.odm.mongodb.document_manager", "getRepository"]
+        arguments:
+            - 'Peg\Bundles\ApiBundle\Document\PictureEvent'

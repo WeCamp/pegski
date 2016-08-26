@@ -7,7 +7,9 @@ use Overblog\GraphQLBundle\Error\UserWarning;
 use Peg\Bundles\ApiBundle\Document\CommentEvent;
 use Peg\Bundles\ApiBundle\Document\LocationEvent;
 use Peg\Bundles\ApiBundle\Document\Peg;
+use Peg\Bundles\ApiBundle\Document\PictureEvent;
 use Peg\Domain\Commands\AddComment;
+use Peg\Domain\Commands\AddPicture;
 use Peg\Domain\Commands\UpdateLocation;
 
 final class PegEventMutation
@@ -53,10 +55,10 @@ final class PegEventMutation
         return $pegEvent;
     }
 
-    public function createPegPhotoEvent(Peg $peg, string $photoUrl, string $comment, string $location = null) : CommentEvent
+    public function createPegPhotoEvent(Peg $peg, string $photoUrl, string $comment = null, string $location = null) : PictureEvent
     {
-        $pegEvent = PhotoEvent::create($peg, "added a comment, you know", $photoUrl, $comment, $location);
-        $command = new AddPhoto($pegEvent);
+        $pegEvent = PictureEvent::create($peg, "added a picture… how nice!", $photoUrl, $comment, $location);
+        $command = new AddPicture($pegEvent);
 
         try {
             $this->commandBus->handle($command);

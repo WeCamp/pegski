@@ -21,6 +21,7 @@ services:
     arguments:
       - "@peg.api_bundle.repository.doctrine.odm.comment_event"
       - "@peg.api_bundle.repository.doctrine.odm.location_event"
+      - "@peg.api_bundle.repository.doctrine.odm.picture_event"
     tags:
       - { name: overblog_graphql.resolver, alias: "peg_events", method: "resolveEventsByPeg" }
 

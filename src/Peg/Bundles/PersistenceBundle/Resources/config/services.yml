@@ -21,3 +21,11 @@ services:
       - "@peg.api_bundle.repository.doctrine.odm.comment_event"
     tags:
       - { name: tactician.handler, command: Peg\Domain\Commands\AddComment }
+
+  peg.persistence.command.add_picture.handler:
+    class: Peg\Domain\Commands\AddPictureHandler
+    arguments:
+      - "@peg.api_bundle.repository.doctrine.odm.peg"
+      - "@peg.api_bundle.repository.doctrine.odm.picture_event"
+    tags:
+      - { name: tactician.handler, command: Peg\Domain\Commands\AddPicture }

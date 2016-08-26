@@ -1,4 +1,4 @@
-PegEvent:
+PegPictureEvent:
   type: object
   config:
     description:  "You know… a peg do stuff"
@@ -6,21 +6,15 @@ PegEvent:
       id:
         type:         "String!"
         description:  "The ID of this event"
-      type:
-        type:         "String"
-        description:  "Event type"
       description:
         type:         "String"
         description:  "What is this event"
       location:
-        type:         "String"
+        type:         "String!"
         description:  "and what was the location"
       comment:
         type:         "String"
-        description:  "you know...stuff you said"
-      pictureUrl:
+        description:  "the content of the comment"
+      pictrueUrl:
         type:         "String"
-        description:  "where the image is… Duh!"
-      happenedAt:
-        type:         "String"
-        description:  "When it happened, rights?"
+        description:  "where the picture is"

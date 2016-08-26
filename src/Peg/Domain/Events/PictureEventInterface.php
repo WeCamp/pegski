@@ -3,5 +3,5 @@ namespace Peg\Domain\Events;
 
 interface PictureEventInterface
 {
-    public function getPicture() : string;
+    public function getPictureUrl() : string;
 }

@@ -20,6 +20,11 @@
     - name: remove the dev symfony3.conf and replace it by the aws version
       shell: cd /home/ubuntu/pegski/docker/nginx && rm symfony3.conf && mv symfony3-aws.conf symfony3.conf
 
+    - name: fix permissions for var
+      command:  chmod -R 777 var
+      args:
+       chdir: /home/ubuntu/pegski
+
     - name: run make setup
       command: make run
       args:

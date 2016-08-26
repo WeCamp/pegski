@@ -55,6 +55,34 @@ body {
     font-style: italic;
 }
 
+.navbar #timelineSearch {
+    background: transparent;
+    border: none;
+    height: 50px;
+    font-size: 20px;
+}
+
+.navbar #timelineSearch:focus {
+    outline: none;
+}
+
+.btn-pegski {
+    color: #fff;
+    background-color: #003e91;
+    border-color: #006aff;
+}
+.btn-pegski:focus,
+.btn-pegski.focus {
+    color: #fff;
+    background-color: #004bb9;
+    border-color: #0054d6;
+}
+.btn-pegski:hover {
+    color: #fff;
+    background-color: #004bb9;
+    border-color: #0061eb;
+}
+
 
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

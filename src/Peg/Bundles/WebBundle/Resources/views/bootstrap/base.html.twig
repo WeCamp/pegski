@@ -11,6 +11,8 @@
     <link href="{{ asset('bundles/pegweb/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bundles/pegweb/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('bundles/pegweb/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/pegweb/css/fontello.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/pegweb/css/fontello-codes.css') }}" rel="stylesheet">
 </head>
 <body>
 
@@ -18,7 +20,10 @@
     <nav class="navbar navbar-inverse navbar-fixed-top pegski-navbar">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">PEGSKI</a>
+                <a class="navbar-brand" href="/">PEGSKI /</a>
+            </div>
+            <div id="search" class="navbar-left">
+                <input type="text" id="timelineSearch" placeholder="peg code">
             </div>
             <div id="navbar" class="navbar-right">
                 <ul class="nav navbar-nav">

@@ -48,6 +48,13 @@
     window.addEventListener("resize", callbackFunc);
     window.addEventListener("scroll", callbackFunc);
 
+    $('#timelineSearch').keyup(function(event) {
+        if (event.keyCode == 13) {
+            var shortcode = $(event.currentTarget).val();
+            window.location = '/' + shortcode;
+        }
+    });
+
     $('#registerPeg').click(function(event) {
         event.preventDefault();
 

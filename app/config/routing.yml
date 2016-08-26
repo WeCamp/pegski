@@ -2,7 +2,7 @@ fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
 
 overblog_graphql_endpoint:
-  path: /graphql
+  path: /graphql/
   defaults:
       _controller: OverblogGraphQLBundle:Graph:endpoint
   options:

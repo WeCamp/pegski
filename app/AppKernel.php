@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new League\Tactician\Bundle\TacticianBundle(),
             new Overblog\GraphQLBundle\OverblogGraphQLBundle(),
+            new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Peg\Bundles\ApiBundle\PegApiBundle(),
             new Peg\Bundles\PersistenceBundle\PegPersistenceBundle(),
             new Peg\Bundles\WebBundle\PegWebBundle(),

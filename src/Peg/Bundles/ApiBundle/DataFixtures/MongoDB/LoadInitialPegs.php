@@ -5,11 +5,12 @@ namespace Peg\Bundles\ApiBundle\DataFixtures\MongoDB;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\SharedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Peg\Bundles\ApiBundle\Document\CommentEvent;
 use Peg\Bundles\ApiBundle\Document\Peg;
 
 class LoadInitialPegs extends AbstractFixture implements SharedFixtureInterface
 {
-    static public $coaches = ['catalyst', 'flexman', 'giant', 'puppetmaster', 'tacticus', 'voltra'];
+    static public $shortcodes = ['catalyst', 'flexman', 'giant', 'puppetmaster', 'tacticus', 'voltra'];
 
 
     /**
@@ -19,10 +20,10 @@ class LoadInitialPegs extends AbstractFixture implements SharedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        foreach (self::$coaches as $coach) {
-            $peg = Peg::register($coach);
+        foreach (self::$shortcodes as $shortcode) {
+            $peg = Peg::register($shortcode);
 
-            $this->addReference('peg:' . $coach, $peg);
+            $this->addReference('peg:' . $shortcode, $peg);
 
             $manager->persist($peg);
 

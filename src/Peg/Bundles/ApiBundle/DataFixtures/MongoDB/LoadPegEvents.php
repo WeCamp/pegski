@@ -33,12 +33,14 @@ class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, D
      */
     public function load(ObjectManager $manager)
     {
-        foreach (LoadInitialPegs::$coaches as $coach) {
+        foreach (LoadInitialPegs::$shortcodes as $shortcode) {
             /** @var Peg $peg */
-            $peg = $this->getReference('peg:' . $coach);
+            $peg = $this->getReference('peg:' . $shortcode);
 
-            $path = dirname(dirname(dirname(dirname(dirname(dirname(__DIR__)))))) . "/web/pics/$coach";
+            $basePath = "/pics/$shortcode";
+            $path     = dirname(dirname(dirname(dirname(dirname(dirname(__DIR__)))))) . "/web$basePath";
             if (!is_dir($path)) {
+                var_dump("Shortcode $shortcode has no images");
                 continue;
             }
 
@@ -46,7 +48,8 @@ class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, D
             $finder->files()->in($path);
 
             foreach ($finder as $file) {
-                $pictureEvent = PictureEvent::create($peg, "You know… a picture", $file);
+                $relativePath = preg_replace('#^.*'.$basePath.'#', $basePath, $file);
+                $pictureEvent = PictureEvent::create($peg, "You know… a picture", $relativePath, 'WeCamp');
                 $manager->persist($pictureEvent);
             }
         }

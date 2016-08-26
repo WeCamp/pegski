@@ -95,13 +95,13 @@
             </div>
         </div>
     </div>
-{% endblock %}
 
 
-{% block scripts %}
     <script>
         window.pegShortcode = '{{ shortcode }}';
     </script>
+{% endblock %}
 
+{% block scripts %}
     <script src="{{ asset('bundles/pegweb/js/timeline.js') }}"></script>
 {% endblock %}

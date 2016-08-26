@@ -67,6 +67,11 @@ abstract class Event
     }
 
 
+    public function getType(){
+        return get_called_class();
+    }
+
+
     public function getId() : string
     {
         return $this->id;

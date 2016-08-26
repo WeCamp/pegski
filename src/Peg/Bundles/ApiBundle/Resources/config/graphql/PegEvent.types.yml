@@ -6,6 +6,9 @@ PegEvent:
       id:
         type:         "String!"
         description:  "The ID of this event"
+      type:
+        type:         "String"
+        description:  "Event type"
       description:
         type:         "String"
         description:  "What is this event"

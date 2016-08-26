@@ -3,5 +3,5 @@ web_homepage:
     defaults: { _controller: PegWebBundle:Default:index }
 
 web_timeline:
-    path:     /timeline
+    path:     /{shortcode}
     defaults: { _controller: PegWebBundle:Default:timeline }

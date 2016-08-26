@@ -11,8 +11,8 @@ class DefaultController extends Controller
         return $this->render('PegWebBundle:Default:index.html.twig');
     }
 
-    public function timelineAction()
+    public function timelineAction($shortcode)
     {
-        return $this->render('PegWebBundle:Default:timeline.html.twig');
+        return $this->render('PegWebBundle:Default:timeline.html.twig', ['shortcode' => $shortcode]);
     }
 }

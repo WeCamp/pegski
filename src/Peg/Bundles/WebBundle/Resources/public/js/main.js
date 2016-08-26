@@ -30,14 +30,28 @@
         var pegsContainer = $('.pegski-recent-pegs');
 
         response.data.pegs.map(function(peg){
-            pegsContainer.append('<div class="col-md-3"><div class="pegski-peg-block" style=""><div class="pegski-peg-image" style="background-color: #333"><img src="/bundles/pegweb/img/kluut.jpg" class="img-responsive"></div><div class="pegski-peg-description"><i class="fa fa-clock-o" aria-hidden="true"></i>      9:40 @ Veluwemeer by <span class="peg-owner">' +
+            var description = '';
+            var image = '/bundles/pegweb/img/kluut.jpg';
+            if (peg.pegEvents.length > 0) {
+                var event = peg.pegEvents[peg.pegEvents.length - 1];
+                console.log(event);
+                description = event.description;
+
+                if (typeof event.pictureUrl != 'undefined') {
+                    image = event.pictureUrl;
+                }
+             }
+
+            if(description.length > 15) description = description.substring(0, 15) + ' ...';
+
+            pegsContainer.append('<div class="col-md-3"><div class="pegski-peg-block" style=""><div class="pegski-peg-image" style="background-color: #333"><img src="' + image + '" class="img-responsive"></div><div class="pegski-peg-description"><i class="icon-noun_33349_cc" aria-hidden="true"></i> ' + description + ' <span class="peg-owner">' +
                 '<a href="' + Routing.generate('web_timeline', {'shortcode': peg.shortcode}) + '">' + peg.shortcode + '</a>' +
                 '</span></div></div></div>');
         });
     }
 
     function fetchPegs() {
-        const fetchPegsQuery = 'query Test { pegs { shortcode } }';
+        const fetchPegsQuery = 'query Test { pegs { shortcode, pegEvents { description, location, comment, pictureUrl } } }';
         window.graphQLFetch(fetchPegsQuery, {}, reqListener);
     }
 

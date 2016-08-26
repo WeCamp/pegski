@@ -22,8 +22,6 @@ class PegCreateHandler
         $this->documentManager->persist($peg);
         $this->documentManager->flush();
 
-        $savedPeg = $this->documentManager->find(Peg::class, $peg->getId());
-
         // @todo Implement event listener in order to have the Peg as return
     }
 }

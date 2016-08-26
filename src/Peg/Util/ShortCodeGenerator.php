@@ -24,7 +24,7 @@ final class ShortCodeGenerator
         // Initialize a new tokenizr class.
         $this->tokenizer = new Tokenizr();
         // Set the characters to only lowercase and numbers
-        $this->tokenizer->setCharacters('abcdefghijklmnopqrstuvwxyz0123456789');
+        $this->tokenizer->setCharacters('abcdefghkjmnpqrstuvwxyz123456789');
         // Set the amount of characters used for generating a new token code to 5
         $this->tokenizer->setTokenLength(5);
         // Set the already taken short codes

@@ -31,7 +31,7 @@
 
         response.data.pegs.map(function(peg){
             pegsContainer.append('<div class="col-md-3"><div class="pegski-peg-block" style=""><div class="pegski-peg-image" style="height: 200px; background-color: #333"><span style="color: #fff;">Picture!</span></div><div class="pegski-peg-description"><i class="fa fa-clock-o" aria-hidden="true"></i>      9:40 @ Veluwemeer by <span class="peg-owner">' +
-                peg.shortcode +
+                '<a href="' + Routing.generate('web_timeline', {'shortcode': peg.shortcode}) + '">' + peg.shortcode + '</a>' +
                 '</span></div></div></div>');
         });
     }

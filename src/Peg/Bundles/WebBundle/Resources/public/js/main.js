@@ -40,25 +40,9 @@
 
     }
 
-    function graphQLFetch(query, variables, callback) {
-        var oReq = new XMLHttpRequest();
-        oReq.addEventListener("load", callback);
-        oReq.open("POST", "/app_dev.php/graphql/");
-        //oReq.responseType = 'json';
-        oReq.setRequestHeader('content-type', 'application/json');
-        oReq.setRequestHeader('accept', 'application/json');
-
-        oReq.send(JSON.stringify(
-            {
-                query: query,
-                variables: variables
-            }
-        ));
-    }
-
     function fetchPegs() {
         const fetchPegsQuery = 'query Test { pegs { shortcode } }';
-        graphQLFetch(fetchPegsQuery, {}, reqListener);
+        window.graphQLFetch(fetchPegsQuery, {}, reqListener);
     }
 
     fetchPegs();
@@ -67,4 +51,15 @@
     window.addEventListener("load", callbackFunc);
     window.addEventListener("resize", callbackFunc);
     window.addEventListener("scroll", callbackFunc);
+
+    $('#registerPeg').click(function(event) {
+        event.preventDefault();
+
+        const fetchPegsQuery = 'mutation NewPeg { createPeg { shortcode } }';
+        window.graphQLFetch(fetchPegsQuery, {}, function() {
+            var response = JSON.parse(this.responseText);
+            var shortcode = response.data.createPeg.shortcode;
+            window.location = '/' + shortcode;
+        });
+    });
 })();

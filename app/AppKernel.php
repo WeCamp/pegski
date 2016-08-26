@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Peg\Bundles\ApiBundle\PegApiBundle(),
             new Peg\Bundles\PersistenceBundle\PegPersistenceBundle(),
             new Peg\Bundles\WebBundle\PegWebBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

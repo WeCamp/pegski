@@ -51,7 +51,7 @@
     $('#timelineSearch').keyup(function(event) {
         if (event.keyCode == 13) {
             var shortcode = $(event.currentTarget).val();
-            window.location = '/' + shortcode;
+            window.location = Routing.generate('web_timeline', {'shortcode': shortcode});
         }
     });
 
@@ -62,7 +62,7 @@
         window.graphQLFetch(fetchPegsQuery, {}, function() {
             var response = JSON.parse(this.responseText);
             var shortcode = response.data.createPeg.shortcode;
-            window.location = '/' + shortcode;
+            window.location = Routing.generate('web_timeline', {'shortcode': shortcode});
         });
     });
 })();

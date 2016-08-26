@@ -25,6 +25,10 @@ class LoadInitialPegs extends AbstractFixture implements SharedFixtureInterface
             $this->addReference('peg:' . $coach, $peg);
 
             $manager->persist($peg);
+
+            $pegEventBorn = CommentEvent::create($peg, 'PegCreated', 'A Peg has been born! Give it a nice lifetime');
+
+            $manager->persist($pegEventBorn);
         }
 
         $manager->flush();

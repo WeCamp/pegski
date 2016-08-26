@@ -5,6 +5,10 @@ body {
     padding-bottom: 50px;
 }
 
+.modal {
+    color: #000;
+}
+
 .pegski-navbar {
     padding-top: 20px;
     background: #003366;
@@ -194,6 +198,25 @@ body {
     top: 5px;
     left: 50%;
     margin-left: -155px;
+    background-color: #999999;
+    z-index: 100;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.timeline > li.timeline-add-event .timeline-badge {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    margin-left: -25px;
     background-color: #999999;
     z-index: 100;
     border-top-right-radius: 50%;

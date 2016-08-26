@@ -18,4 +18,31 @@
     }
 
     fetchPeg();
+
+    $('#addEventModal form').submit(function(event) {
+        event.preventDefault();
+
+        // get all the inputs into an array.
+        var inputs = $('#addEventModal form :input[class="form-control"]');
+
+        // get an associative array of just the values.
+        var values = {};
+        inputs.each(function() {
+            values[this.name] = $(this).val();
+            $(this).val('');
+        });
+
+        const query = "query CreateEvent {" +
+            "peg(shortcode: \"fuioi\") {" +
+                "createPegPictureEvent (comment:\"blaat\", location:\"De Kluut\", pictureUrl:\"http://lorempixel.com/400/200/\") { id }" +
+            "}" +
+        "}";
+        window.graphQLFetch(query, {}, function() {
+            fetchPeg();
+        });
+
+        var modal = $(event.currentTarget).closest('.modal');
+        $(modal).modal('hide');
+        console.log(modal);
+    });
 })();

@@ -22,6 +22,8 @@ Peg:
       createPegLocationEvent:
         type: "PegEvent"
         args:
+          comment:
+            type: "String"
           location:
             type: "String!"
         resolve: "@=mutation('peg_location_event_mutation_create', [value, args['location']])"

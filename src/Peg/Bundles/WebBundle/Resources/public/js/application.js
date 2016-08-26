@@ -14,6 +14,13 @@ var graphQLFetch = function(query, variables, callback) {
     ));
 };
 
+$('#timelineSearch').keyup(function(event) {
+    if (event.keyCode == 13) {
+        var shortcode = $(event.currentTarget).val();
+        window.location = Routing.generate('web_timeline', {'shortcode': shortcode});
+    }
+});
+
 window.graphQLFetch = graphQLFetch;
 
 if (window.pegShortcode) {

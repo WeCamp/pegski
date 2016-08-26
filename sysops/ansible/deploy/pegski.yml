@@ -15,11 +15,10 @@
       git:
         repo=https://github.com/WeCamp/team-attachable.git
         dest=/home/ubuntu/pegski
+        force=yes
 
     - name: remove the dev symfony3.conf and replace it by the aws version
-      command: rm symfony3.conf && mv symfony3-aws.conf symfony3.conf
-      args:
-        chdir: /home/ubuntu/pegski/docker/nginx
+      shell: cd /home/ubuntu/pegski/docker/nginx && rm symfony3.conf && mv symfony3-aws.conf symfony3.conf
 
     - name: run make setup
       command: make run

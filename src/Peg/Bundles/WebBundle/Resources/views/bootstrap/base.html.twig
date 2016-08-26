@@ -19,17 +19,20 @@
 {% block navbar %}
     <nav class="navbar navbar-inverse navbar-fixed-top pegski-navbar">
         <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="{{ path('web_homepage') }}">PEGSKI /</a>
-            </div>
-            <div id="search" class="navbar-left">
-                <input type="text" id="timelineSearch" placeholder="peg code">
-            </div>
-            <div id="navbar" class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ path('web_homepage') }}">Recent Pegs</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
+            {% block navbar_container %}
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ path('web_homepage') }}">PEGSKI /</a>
+                </div>
+                <div id="search" class="navbar-left">
+                    <input type="text" id="timelineSearch" placeholder="peg code">
+                </div>
+                <div id="navbar" class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        {% block navbar_navigation %}
+                        {% endblock %}
+                    </ul>
+                </div><!--/.nav-collapse -->
+            {% endblock %}
         </div>
     </nav>
 {% endblock %}

@@ -18,6 +18,10 @@
     </li>
 {% endmacro %}
 
+{% block navbar_navigation %}
+    <li><a href="{{ path('web_homepage') }}">Recent Pegs</a></li>
+{% endblock %}
+
 {% block body %}
     <ul class="timeline">
         {{ _self.timeline_item(

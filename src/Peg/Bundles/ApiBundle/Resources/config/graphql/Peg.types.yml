@@ -33,3 +33,13 @@ Peg:
           location:
             type: "String"
         resolve: "@=mutation('peg_comment_event_mutation_create', [value, args['comment'], args['location']])"
+      createPegCommentEvent:
+        type: "PegEvent"
+        args:
+          picture:
+            type:
+          comment:
+            type: "String"
+          location:
+            type: "String"
+        resolve: "@=mutation('peg_picture_event_mutation_create', [value, args['comment'], args['location']])"

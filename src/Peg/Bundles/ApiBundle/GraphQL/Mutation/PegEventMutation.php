@@ -10,7 +10,7 @@ use Peg\Bundles\ApiBundle\Document\Peg;
 use Peg\Domain\Commands\AddComment;
 use Peg\Domain\Commands\UpdateLocation;
 
-final class PegLocationEventMutation
+final class PegEventMutation
 {
     /**
      * @var CommandBus
@@ -43,6 +43,20 @@ final class PegLocationEventMutation
     {
         $pegEvent = CommentEvent::create($peg, "added a comment, you know",$comment, $location);
         $command = new AddComment($pegEvent);
+
+        try {
+            $this->commandBus->handle($command);
+        } catch (\Exception $e) {
+            throw new UserWarning($e->getMessage());
+        }
+
+        return $pegEvent;
+    }
+
+    public function createPegPhotoEvent(Peg $peg, string $photoUrl, string $comment, string $location = null) : CommentEvent
+    {
+        $pegEvent = PhotoEvent::create($peg, "added a comment, you know", $photoUrl, $comment, $location);
+        $command = new AddPhoto($pegEvent);
 
         try {
             $this->commandBus->handle($command);

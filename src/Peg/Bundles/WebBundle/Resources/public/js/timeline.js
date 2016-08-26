@@ -33,8 +33,8 @@
         });
 
         const query = "query CreateEvent {" +
-            "peg(shortcode: \"fuioi\") {" +
-                "createPegPictureEvent (comment:\"blaat\", location:\"De Kluut\", pictureUrl:\"http://lorempixel.com/400/200/\") { id }" +
+            "peg(shortcode: \"" + window.pegShortcode + "\") {" +
+                "createPegPictureEvent (comment:\"" + values['description'] + "\", location:\"" + values['location'] + "\", pictureUrl:\"" + values['picture'] + "\") { id }" +
             "}" +
         "}";
         window.graphQLFetch(query, {}, function() {

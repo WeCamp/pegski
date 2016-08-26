@@ -21,30 +21,23 @@ class PictureEvent extends Event implements PictureEventInterface
      */
     private $pictureUrl;
 
-    protected function __construct(
-        Peg $peg,
-        string $description,
-        string $pictureUrl,
-        string $location = null
-    ) {
-        parent::__construct($peg, $description, $location);
-
-        $this->pictureUrl = $pictureUrl;
-    }
-
     public static function create(
         Peg $peg,
         string $description,
         string $pictureUrl,
-        string $location = null
+        string $location = null,
+        string $comment = null
     ) : PictureEvent
     {
-        return new self($peg, $description, $pictureUrl, $location);
+        $pictureEvent = new self($peg, $description, $location, $comment);
+        $pictureEvent->pictureUrl = $pictureUrl;
+
+        return $pictureEvent;
     }
 
-    public function getPicture() : string
+
+    public function getPictureUrl() : string
     {
         return $this->pictureUrl;
     }
-
 }

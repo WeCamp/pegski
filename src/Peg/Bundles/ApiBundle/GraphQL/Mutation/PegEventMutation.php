@@ -27,9 +27,9 @@ final class PegEventMutation
         $this->commandBus = $commandBus;
     }
 
-    public function createPegLocationEvent(Peg $peg, string $location) : LocationEvent
+    public function createPegLocationEvent(Peg $peg, string $location, string $comment = null, string $email = null) : LocationEvent
     {
-        $pegEvent = LocationEvent::create($peg, "added a location", $location);
+        $pegEvent = LocationEvent::create($peg, "added a location", $location, $comment, $email);
         $command = new UpdateLocation($pegEvent);
 
         try {
@@ -41,9 +41,9 @@ final class PegEventMutation
         return $pegEvent;
     }
 
-    public function createPegCommentEvent(Peg $peg, string $comment, string $location = null) : CommentEvent
+    public function createPegCommentEvent(Peg $peg, string $comment, string $location = null, string $email = null) : CommentEvent
     {
-        $pegEvent = CommentEvent::create($peg, "added a comment, you know",$comment, $location);
+        $pegEvent = CommentEvent::create($peg, "added a comment, you know",$comment, $location, $email);
         $command = new AddComment($pegEvent);
 
         try {
@@ -55,9 +55,9 @@ final class PegEventMutation
         return $pegEvent;
     }
 
-    public function createPegPhotoEvent(Peg $peg, string $photoUrl, string $comment = null, string $location = null) : PictureEvent
+    public function createPegPhotoEvent(Peg $peg, string $photoUrl, string $comment = null, string $location = null, string $email = null) : PictureEvent
     {
-        $pegEvent = PictureEvent::create($peg, "added a picture… how nice!", $photoUrl, $comment, $location);
+        $pegEvent = PictureEvent::create($peg, "added a picture… how nice!", $photoUrl, $comment, $location, $email);
         $command = new AddPicture($pegEvent);
 
         try {

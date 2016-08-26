@@ -26,7 +26,9 @@ Peg:
             type: "String"
           location:
             type: "String!"
-        resolve: "@=mutation('peg_location_event_mutation_create', [value, args['location']])"
+          email:
+            type: "String"
+        resolve: "@=mutation('peg_location_event_mutation_create', [value, args['location'], args['comment'], args['email']])"
       createPegCommentEvent:
         type: "PegEvent"
         args:
@@ -34,7 +36,9 @@ Peg:
             type: "String!"
           location:
             type: "String"
-        resolve: "@=mutation('peg_comment_event_mutation_create', [value, args['comment'], args['location']])"
+          email:
+            type: "String"
+        resolve: "@=mutation('peg_comment_event_mutation_create', [value, args['comment'], args['location'], args['email']])"
       createPegPictureEvent:
         type: "PegEvent"
         args:
@@ -45,4 +49,6 @@ Peg:
             type:         "String"
           location:
             type:         "String"
+          email:
+            type: "String"
         resolve: "@=mutation('peg_picture_event_mutation_create', [value, args['pictureUrl'], args['comment'], args['location']])"

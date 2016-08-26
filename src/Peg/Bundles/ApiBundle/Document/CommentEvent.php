@@ -22,9 +22,10 @@ class CommentEvent extends Event
         Peg $peg,
         string $description,
         string $comment,
-        string $location = null
+        string $location = null,
+        string $email = null
     ) : CommentEvent
     {
-        return new self($peg, $description, $location, $comment);
+        return new self($peg, $description, $location, $comment, $email);
     }
 }

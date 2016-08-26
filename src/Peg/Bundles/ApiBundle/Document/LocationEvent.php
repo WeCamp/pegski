@@ -16,9 +16,11 @@ class LocationEvent extends Event
     public static function create(
         Peg $peg,
         string $description,
-        string $location
+        string $location,
+        string $comment = null,
+        string $email = null
     ) : LocationEvent
     {
-        return new self($peg, $description, $location);
+        return new self($peg, $description, $location, $comment, $email);
     }
 }

@@ -180,7 +180,7 @@ body {
     top: 5px;
     left: 50%;
     margin-left: 75px;
-    background-color: #999999;
+    background-color: #D3D9DB !important;
     z-index: 100;
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;

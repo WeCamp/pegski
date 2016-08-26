@@ -15,3 +15,7 @@ PegCommentEvent:
       location:
         type:         "String!"
         description:  "and what was the location"
+      email:
+        type:         "String!"
+        description:  "Email of user for gravatar"
+

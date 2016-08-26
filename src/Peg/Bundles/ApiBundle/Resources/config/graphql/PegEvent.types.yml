@@ -24,3 +24,6 @@ PegEvent:
       happenedAt:
         type:         "String"
         description:  "When it happened, rights?"
+      email:
+        type:         "String"
+        description:  "Email of user for gravatar"

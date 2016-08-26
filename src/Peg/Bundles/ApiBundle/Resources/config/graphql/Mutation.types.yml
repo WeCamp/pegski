@@ -5,15 +5,3 @@ Mutation:
       createPeg:
         type: "Peg"
         resolve: "@=mutation('peg_mutation_create')"
-      createPegLocationEvent:
-        type: "PegLocationEvent"
-        args:
-          location:
-            type: "String!"
-        resolve: "@=mutation('peg_location_event_mutation_create', args['location'])"
-      createPegCommentEvent:
-        type: "PegCommentEvent"
-        args:
-          comment:
-            type: "String!"
-        resolve: "@=mutation('comment_mutation_create', args['comment'])"

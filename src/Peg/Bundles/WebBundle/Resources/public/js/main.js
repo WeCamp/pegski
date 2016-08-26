@@ -51,7 +51,7 @@
     }
 
     function fetchPegs() {
-        const fetchPegsQuery = 'query Test { pegs { shortcode, pegEvents { description, location, comment, pictureUrl } } }';
+        const fetchPegsQuery = 'query GetAllPegs { pegs { shortcode, pegEvents { description, location, comment, pictureUrl } } }';
         window.graphQLFetch(fetchPegsQuery, {}, reqListener);
     }
 

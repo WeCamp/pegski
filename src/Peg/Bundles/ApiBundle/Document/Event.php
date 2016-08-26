@@ -49,6 +49,13 @@ abstract class Event
     private $happenedAt;
 
     /**
+     * @var string
+     *
+     * @MongoDB\Field(type="string")
+     */
+    private $email;
+
+    /**
      * @var Peg
      *
      * @MongoDB\ReferenceOne(targetDocument="Peg")
@@ -56,12 +63,13 @@ abstract class Event
     private $peg;
 
 
-    protected function __construct(Peg $peg, string $description, string $location = null, string $comment = null)
+    protected function __construct(Peg $peg, string $description, string $location = null, string $comment = null, string $email = null)
     {
         $this->peg         = $peg;
         $this->description = $description;
         $this->location    = $location;
         $this->comment     = $comment;
+        $this->email       = $email;
 
         $this->happenedAt = (new \DateTime())->format(\DateTime::ATOM);
     }
@@ -94,6 +102,12 @@ abstract class Event
     {
         return $this->location;
     }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
 
 
     public function getComment()

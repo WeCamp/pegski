@@ -15,3 +15,6 @@ PegLocationEvent:
       comment:
         type:         "String"
         description:  "the content of the comment"
+      email:
+        type:         "String!"
+        description:  "Email of user for gravatar"

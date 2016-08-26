@@ -26,10 +26,11 @@ class PictureEvent extends Event implements PictureEventInterface
         string $description,
         string $pictureUrl,
         string $location = null,
-        string $comment = null
+        string $comment = null,
+        string $email = null
     ) : PictureEvent
     {
-        $pictureEvent = new self($peg, $description, $location, $comment);
+        $pictureEvent = new self($peg, $description, $location, $comment, $email);
         $pictureEvent->pictureUrl = $pictureUrl;
 
         return $pictureEvent;

@@ -18,3 +18,6 @@ PegPictureEvent:
       pictrueUrl:
         type:         "String"
         description:  "where the picture is"
+      email:
+        type:         "String!"
+        description:  "Email of user for gravatar"

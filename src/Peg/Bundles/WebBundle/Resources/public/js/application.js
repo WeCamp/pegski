@@ -15,3 +15,7 @@ var graphQLFetch = function(query, variables, callback) {
 };
 
 window.graphQLFetch = graphQLFetch;
+
+if (window.pegShortcode) {
+    $('#timelineSearch').prop('value', window.pegShortcode);
+}

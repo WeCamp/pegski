@@ -9,6 +9,10 @@ setup: build
 	docker-compose run application composer install
 	docker-compose run application bin/console doctrine:mongodb:schema:update
 
+setup-production: build
+	docker-compose run application composer install -o
+	docker-compose run application bin/console doctrine:mongodb:schema:update
+
 run:
 	docker-compose up -d
 

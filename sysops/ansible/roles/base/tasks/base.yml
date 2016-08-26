@@ -1,0 +1,30 @@
+---
+- name: force apt-get update
+  apt: update_cache=yes
+
+- name: update all packages to the latest version
+  apt: upgrade=dist
+
+- name: install required packages
+  apt:  pkg={{ item }}
+        state=latest
+  with_items:
+    - sudo
+    - ntp
+    - git
+    - build-essential
+    - curl
+
+- name: install nl_NL.UTF-8 locale
+  shell: locale-gen nl_NL.UTF-8
+
+- name: set timezone to UTC
+  when: ansible_date_time.tz != 'UTC'
+  command: timedatectl set-timezone UTC
+
+- name: enable the NTP upstart service
+  service: name=ntp enabled=yes
+
+- name: setup NTP daemon configuration
+  template: src=ntpd.conf.j2 dest=/etc/ntpd.conf
+  notify: restart NTP daemon

@@ -1,0 +1,9 @@
+- name: restart ufw
+  service: name=ufw state=restarted
+
+- name: restart docker
+  service: name=docker state=restarted
+
+- name: restart networking
+  service: name=networking state=restarted
+

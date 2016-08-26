@@ -1,0 +1,34 @@
+- hosts: docker
+  become: yes
+  serial: 1
+  vars:
+    - application_name: "pegski"
+  tasks:
+    - include_vars: ../group_vars/global.yml
+
+    - name: ensures checkout dir exists
+      file:
+        path=/home/ubuntu/pegski
+        state=directory
+
+    - name: checkout our repository
+      git:
+        repo=https://github.com/WeCamp/team-attachable.git
+        dest=/home/ubuntu/pegski
+
+    - name: remove the dev symfony3.conf and replace it by the aws version
+      command: rm symfony3.conf && mv symfony3-aws.conf symfony3.conf
+      args:
+        chdir: /home/ubuntu/pegski/docker/nginx
+
+    - name: run make setup
+      command: make run
+      args:
+        chdir: /home/ubuntu/pegski
+
+    - name: run make run
+      command: make setup
+      args:
+        chdir: /home/ubuntu/pegski
+
+#    - include: docker-cleanup.yml

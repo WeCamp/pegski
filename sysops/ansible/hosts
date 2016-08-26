@@ -1,0 +1,6 @@
+[all:vars]
+ansible_ssh_user=ubuntu
+
+[docker]
+docker_node_a ansible_ssh_host=52.210.117.219 ec2_private_ip=172.31.35.183 instance_id=i-0df93a1721d1e9cec
+

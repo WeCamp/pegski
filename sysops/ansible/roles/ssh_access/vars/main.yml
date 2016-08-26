@@ -1,0 +1,7 @@
+users:
+    - name: merlijn
+      pub_key:
+      - public_keys/merlijn.pub
+
+deprecated_users:
+

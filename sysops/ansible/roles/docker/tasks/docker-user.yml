@@ -1,0 +1,8 @@
+---
+- name: add docker group
+  group: name=docker
+  notify:
+    - restart docker
+
+- name: add user to docker group
+  user: name={{ ansible_ssh_user }} append=yes groups=docker

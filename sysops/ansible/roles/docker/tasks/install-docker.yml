@@ -1,0 +1,104 @@
+# docker is installed following instructions originally found at
+# http://blog.docker.com/2015/07/new-apt-and-yum-repos/
+
+- name: remove docker.io
+  apt:
+    name=docker.io
+    state=absent
+
+- name: remove docker-lxc
+  apt:
+    name=lxc-docker*
+    state=absent
+  ignore_errors: yes
+
+- name: add Docker GPG key
+  apt_key:
+    keyserver=hkp://p80.pool.sks-keyservers.net:80
+    id=58118E89F3A912897C070ADBF76221572C52609D
+    state=present
+
+- name: add Docker repository
+  apt_repository: repo="deb https://apt.dockerproject.org/repo ubuntu-trusty main"
+
+- name: force apt-get update
+  apt: update_cache=yes
+  when: runUpdates
+
+- name: update all packages to the latest version
+  apt: upgrade=dist
+  when: runUpdates
+
+- name: install docker and dependencies
+  apt: name={{ item }}
+  with_items:
+    - lxc
+    - wget
+    - bsdtar
+    - curl
+    - docker-engine
+    - python-boto
+    - python-pip
+
+- name: ensure pip is properly installed
+  easy_install: name=pip
+
+- name: update pip to latest version
+  pip:
+   name=pip
+   state=latest
+
+- name: install docker python
+  pip: name=docker-py
+
+- name: install docker-compose (previously known as fig) to automate multiple docker containers
+  pip: name=docker-compose
+
+- name: update boto to latest version
+  pip:
+   name=boto
+   state=latest
+
+- name: reboot instance
+  shell: sleep 2 && shutdown -r now "reboot triggered by ansible playbook doing updates"
+  async: 1
+  poll: 0
+  become: true
+  ignore_errors: true
+  when: runUpdates
+
+# we need the ipaddress...not the hostname!
+- name: waiting for instance to come up again
+  local_action: wait_for host={{ ansible_ssh_host }}
+                port=22 state=started delay=10
+  become: false
+  when: runUpdates
+
+- name: install kernel extensions so aufs is available for docker
+  shell: 'apt-get -y install linux-image-extra-$(uname -r)'
+
+- name: load aufs kernel module
+  modprobe:
+    name=aufs
+    state=present
+
+- name: configure UFW for Docker
+  lineinfile: dest=/etc/default/ufw regexp=^DEFAULT_FORWARD_POLICY line=DEFAULT_FORWARD_POLICY=\"ACCEPT\"
+  notify:
+    - restart ufw
+
+- name: set aufs as storage driver and restart docker
+  lineinfile:
+    dest=/etc/default/docker
+    line='DOCKER_OPTS="--storage-driver=aufs"'
+  notify:
+    - restart docker
+
+- name: load the docker custodian docker container
+  docker:
+    name: docker-custodian
+    image: yelp/docker-custodian
+    state: present
+    command: /bin/echo success
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock

@@ -1,0 +1,26 @@
+- name: reset authorized keys file for the ansible user
+  shell: "cat /dev/null > /home/{{ ansible_ssh_user }}/.ssh/authorized_keys"
+
+- name: add users
+  user: name={{ item.name }} shell=/bin/bash groups=sudo append=yes
+  with_items: "{{ users }}"
+
+- name: add public_keys to users authorized_keys
+  authorized_key: user={{ item.0.name }} key="{{ lookup('file', item.1) }}"
+  with_subelements:
+    - "{{ users }}"
+    - pub_key
+
+# Remove old users, needs to have items in the dict deprecated_users
+#- name: remove old users
+#  user:  name={{ item.name }} state=absent remove=yes
+#  with_items: "{{ deprecated_users }}"
+
+- name: add public_keys to ansible user with developer authorized_keys
+  authorized_key: user={{ ansible_ssh_user }} key="{{ lookup('file', item.1) }}"
+  with_subelements:
+    - "{{ users }}"
+    - pub_key
+
+- name: remove password restriction for sudo
+  lineinfile: 'dest=/etc/sudoers regexp=^%sudo line="%sudo ALL=(ALL:ALL) NOPASSWD: ALL"'

@@ -55,6 +55,17 @@ body {
     font-style: italic;
 }
 
+.navbar #timelineSearch {
+    background: transparent;
+    border: none;
+    height: 50px;
+    font-size: 20px;
+}
+
+.navbar #timelineSearch:focus {
+    outline: none;
+}
+
 
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

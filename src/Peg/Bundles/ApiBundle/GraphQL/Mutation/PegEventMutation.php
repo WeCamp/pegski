@@ -29,7 +29,7 @@ final class PegEventMutation
 
     public function createPegLocationEvent(Peg $peg, string $location, string $comment = null, string $email = null) : LocationEvent
     {
-        $pegEvent = LocationEvent::create($peg, "added a location", $location, $comment, $email);
+        $pegEvent = LocationEvent::create($peg, "LocationEvent", $location, $comment, $email);
         $command = new UpdateLocation($pegEvent);
 
         try {
@@ -43,7 +43,7 @@ final class PegEventMutation
 
     public function createPegCommentEvent(Peg $peg, string $comment, string $location = null, string $email = null) : CommentEvent
     {
-        $pegEvent = CommentEvent::create($peg, "added a comment, you know",$comment, $location, $email);
+        $pegEvent = CommentEvent::create($peg, "CommentEvent", $comment, $location, $email);
         $command = new AddComment($pegEvent);
 
         try {
@@ -57,7 +57,7 @@ final class PegEventMutation
 
     public function createPegPhotoEvent(Peg $peg, string $photoUrl, string $comment = null, string $location = null, string $email = null) : PictureEvent
     {
-        $pegEvent = PictureEvent::create($peg, "added a picture… how nice!", $photoUrl, $comment, $location, $email);
+        $pegEvent = PictureEvent::create($peg, "PhotoEvent", $photoUrl, $comment, $location, $email);
         $command = new AddPicture($pegEvent);
 
         try {

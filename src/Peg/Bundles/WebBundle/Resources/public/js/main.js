@@ -51,4 +51,15 @@
     window.addEventListener("load", callbackFunc);
     window.addEventListener("resize", callbackFunc);
     window.addEventListener("scroll", callbackFunc);
+
+    $('#registerPeg').click(function(event) {
+        event.preventDefault();
+
+        const fetchPegsQuery = 'mutation NewPeg { createPeg { shortcode } }';
+        window.graphQLFetch(fetchPegsQuery, {}, function() {
+            var response = JSON.parse(this.responseText);
+            var shortcode = response.data.createPeg.shortcode;
+            window.location = '/' + shortcode;
+        });
+    });
 })();

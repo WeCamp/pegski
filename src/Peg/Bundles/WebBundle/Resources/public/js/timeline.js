@@ -3,6 +3,8 @@
     'use strict';
 
     function reqListener() {
+        $('ul.timeline li').not(':first').remove();
+
         var response = JSON.parse(this.responseText);
         var timelineContainer = $('ul.timeline');
 
@@ -96,8 +98,6 @@
             "}" +
             "}";
         window.graphQLFetch(query, {}, function () {
-            var timelineContainer = $('ul.timeline');
-            $(timelineContainer).html('');
             fetchPeg();
         });
 

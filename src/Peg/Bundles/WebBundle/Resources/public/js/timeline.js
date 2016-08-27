@@ -26,7 +26,7 @@
     }
 
     function fetchPeg() {
-        const fetchPegsQuery = 'query MyPeg($pegShortcode: String!) { peg(shortcode: $pegShortcode) { shortcode, pegEvents { pictureUrl, description, location, comment, happenedAt, type, email } } }';
+        var fetchPegsQuery = 'query MyPeg($pegShortcode: String!) { peg(shortcode: $pegShortcode) { shortcode, pegEvents { pictureUrl, description, location, comment, happenedAt, type, email } } }';
         window.graphQLFetch(fetchPegsQuery, {pegShortcode: window.pegShortcode}, reqListener);
     }
 
@@ -90,7 +90,7 @@
             $(this).val('');
         });
 
-        const query = "query CreateEvent {" +
+        var query = "query CreateEvent {" +
             "peg(shortcode: \"" + window.pegShortcode + "\") {" +
                 "createPegPictureEvent (comment:\"" + values['description'] + "\", location:\"" + values['location'] + "\", pictureUrl:\"" + values['picture'] + "\") { id }" +
             "}" +

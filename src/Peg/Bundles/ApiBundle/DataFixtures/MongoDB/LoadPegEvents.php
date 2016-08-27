@@ -59,7 +59,7 @@ class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, D
             $fileNo = 0;
             foreach ($finder as $file) {
                 $fileNo++;
-var_dump($file->getFilename());
+
                 $comment = null;
                 if ($shortcode == 'skoop') {
                     $comment = $this->getCommentForSkoop($file);

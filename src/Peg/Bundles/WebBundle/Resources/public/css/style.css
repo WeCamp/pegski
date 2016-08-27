@@ -45,7 +45,10 @@ body {
 }
 
 .pegski-recent-pegs .pegski-peg-image {
-
+    height: 150px;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
 }
 
 .pegski-recent-pegs .pegski-peg-description {

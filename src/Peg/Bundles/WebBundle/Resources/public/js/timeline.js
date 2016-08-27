@@ -2,6 +2,8 @@
 
     'use strict';
 
+    window.latestEventWasInversed = false;
+
     function reqListener() {
         $('ul.timeline li').not(':first').remove();
 
@@ -17,13 +19,14 @@
             var comment = pegEvent.comment !== null ? pegEvent.comment : '';
             var badge = getIconClassForPegEvent(pegEvent);
 
+            window.latestEventWasInversed = index % 2 == 0;
+
             var item = timelineContainer.append('<li class="' + inversion + '">' +
                 '<div class="timeline-avatar"><img src="' + avatar + '" class="img-responsive img-circle"></div>' +
                 '<div class="timeline-badge"><i class="glyphicon glyphicon-' + badge + '"></i></div>' +
                 '<div class="timeline-panel">' +
                 '<div class="timeline-heading"><p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> ' + timeSinceEvent + locationString + '</small></p>' +
                 '</div><div class="timeline-body">' + image + comment + '</div></div></li>');
-            $(item).addClass('super-test');
         });
     }
 
@@ -79,30 +82,50 @@
 
     fetchPeg();
 
-    $('#addEventModal form').submit(function (event) {
-        event.preventDefault();
+    $('#addEvent').click(function () {
+        var inversion = window.latestEventWasInversed == false ? "timeline-inverted" : "timeline";
 
-        // get all the inputs into an array.
-        var inputs = $('#addEventModal form :input[class="form-control"]');
+        var timelineContainer = $('ul.timeline');
+        $(timelineContainer).find('#new-event').remove();
 
-        // get an associative array of just the values.
-        var values = {};
-        inputs.each(function () {
-            values[this.name] = $(this).val();
-            $(this).val('');
-        });
+        var item = timelineContainer.prepend(
+            '<li id="newEvent" class="' + inversion + '">' +
+            '<div class="timeline-badge"><i class="glyphicon glyphicon-file"></i></div>' +
+            '<div class="timeline-panel">' +
+            '<div class="timeline-heading"><p>Add a new event to the peg</p></div>' +
+            '<div class="timeline-body"><form>' +
+            '<p><input type="text" name="location" placeholder="Location"></p>' +
+            '<p><input type="text" name="picture" placeholder="Picture URL"></p>' +
+            '<p><input type="text" name="comment" placeholder="Comment"></p>' +
+            '<p><button type="submit" class="btn btn-primary">Save changes</button></p>' +
+            '</form></div>' +
+            '</div>' +
+            '</li>'
+        );
 
-        var query = "query CreateEvent {" +
-            "peg(shortcode: \"" + window.pegShortcode + "\") {" +
+        $('#newEvent form').submit(function (event) {
+            event.preventDefault();
+
+            // get all the inputs into an array.
+            var inputs = $('#newEvent form :input[type="text"]');
+
+            // get an associative array of just the values.
+            var values = {};
+            inputs.each(function () {
+                values[this.name] = $(this).val();
+                $(this).val('');
+            });
+
+            var query = "query CreateEvent {" +
+                "peg(shortcode: \"" + window.pegShortcode + "\") {" +
                 "createPegPictureEvent (comment:\"" + values['comment'] + "\", location:\"" + values['location'] + "\", pictureUrl:\"" + values['picture'] + "\") { id }" +
-            "}" +
-            "}";
-        window.graphQLFetch(query, {}, function () {
-            fetchPeg();
-        });
+                "}" +
+                "}";
+            window.graphQLFetch(query, {}, function () {
+                fetchPeg();
+            });
 
-        var modal = $(event.currentTarget).closest('.modal');
-        $(modal).modal('hide');
-        console.log(modal);
+            $(event.currentTarget).closest('#newEvent').remove();
+        });
     });
 })();

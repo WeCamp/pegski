@@ -98,6 +98,21 @@ body {
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+#newEvent .timeline-heading p {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+#newEvent input[type=text] {
+    background: transparent;
+    border: none;
+    width: 90%;
+}
+
+#newEvent input[type=text]:focus {
+    outline: none;
+}
+
 .timeline {
     list-style: none;
     padding: 20px 0 20px;

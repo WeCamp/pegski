@@ -25,41 +25,11 @@
 {% block body %}
     <ul class="timeline">
         <li class="timeline-add-event"><!-- Button trigger modal -->
-            <a href="#" data-toggle="modal" data-target="#addEventModal">
+            <a href="#" id="addEvent">
                 <div class="timeline-badge"><i class="glyphicon glyphicon-plus"></i></div>
             </a>
         </li>
     </ul>
-
-    <!-- Modal -->
-    <div class="modal fade" id="addEventModal" tabindex="-1" role="dialog" aria-labelledby="addEventModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add new event to your peg</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <input type="text" name="comment" class="form-control" placeholder="Comment">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="location" class="form-control" placeholder="Location">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="picture" class="form-control" placeholder="Picture URL">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
 
     <script>
         window.pegShortcode = '{{ shortcode }}';

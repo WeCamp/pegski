@@ -1,13 +1,19 @@
 # Team Attachable - Project "Peg"
 
-Aka as the PEG Project, in which we will try to maximise the value of the PSA.
+Aka the PEG Project, in which we will try to maximise the value of the PSA.
+
+## Pegski
+
+The project has been named [Pegski and is online now](http://peg.ski).
 
 ## Requirements
 
 * Docker
 * Docker Compose
 
-## Install
+For being able to deploy you'll need Ansible as well.
+
+## Install and run locally
 
 1. Clone this repository on your machine
 2. Build the docker containers and run the initial setup: `make setup`

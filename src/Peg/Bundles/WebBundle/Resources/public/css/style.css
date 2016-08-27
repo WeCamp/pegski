@@ -37,6 +37,10 @@ body {
     padding-bottom: 50px;
 }
 
+.pegski-recent-pegs a {
+    text-decoration: none;
+}
+
 .pegski-recent-pegs .pegski-peg-block {
     margin: 5%;
     background-color: #fff;

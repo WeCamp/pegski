@@ -5,6 +5,9 @@ users:
     - name: toby
       pub_key:
       - public_keys/toby.pub
+    - name: pim
+      pub_key:
+      - public_keys/pim.pub
 
 deprecated_users:
 

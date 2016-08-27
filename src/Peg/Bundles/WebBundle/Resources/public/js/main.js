@@ -46,7 +46,7 @@
 
             pegsContainer.append(
                 '<a href="' + Routing.generate('web_timeline', {'shortcode': peg.shortcode}) + '">' +
-                '<div class="col-md-3"><div class="pegski-peg-block" style=""><div class="pegski-peg-image" style="background-image: url(' + image + ');"></div><div class="pegski-peg-description"><i class="icon-noun_33349_cc" aria-hidden="true"></i> ' + description + ' <span class="peg-owner">' +
+                '<div class="col-md-3"><div class="pegski-peg-block" style=""><div class="pegski-peg-image" style="background-image: url(\'' + image + '\');"></div><div class="pegski-peg-description"><i class="icon-noun_33349_cc" aria-hidden="true"></i> ' + description + ' <span class="peg-owner">' +
                  peg.shortcode +
                 '</span></div></div></div></a>'
             );

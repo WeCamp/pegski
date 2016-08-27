@@ -70,12 +70,12 @@
         var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
         if (diffDays < 30) {
             var timeString = diffDays > 1 ? ' days' : ' day';
-            return diffDays;
+            return diffDays + timeString;
         }
 
         var diffMonths = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneMonth)));
         ;
-        var timeString = diffHours > 1 ? ' months' : ' month';
+        var timeString = diffMonths > 1 ? ' months' : ' month';
         return diffMonths + timeString;
 
     }

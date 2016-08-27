@@ -33,7 +33,7 @@
             var description = '';
             var image = '/bundles/pegweb/img/kluut.jpg';
             if (peg.pegEvents.length > 0) {
-                for (var eventI = peg.pegEvents.length-1; eventI >= 0; eventI--) {
+                for (var eventI = 0; peg.pegEvents.length-1 >= 0; eventI++) {
                     if (peg.pegEvents[eventI].pictureUrl !== undefined && peg.pegEvents[eventI].pictureUrl !== null) {
                         image = peg.pegEvents[eventI].pictureUrl;
                         break;

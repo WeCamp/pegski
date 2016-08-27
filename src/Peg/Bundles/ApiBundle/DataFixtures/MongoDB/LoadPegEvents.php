@@ -83,8 +83,8 @@ class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, D
     private function getCommentForSkoop(SplFileInfo $file)
     {
         switch ($file->getFilename()) {
-            case '_.jpg':
-                return 'Prepare myself ...';
+            case '0.jpg':
+                return 'Preparing myself ...';
             case '1.jpg':
                 return 'I\'m ready and beautiful';
             case '2.jpg':

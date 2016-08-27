@@ -11,7 +11,18 @@ use Peg\Bundles\ApiBundle\Document\Peg;
 
 class LoadInitialPegs extends AbstractFixture implements SharedFixtureInterface
 {
-    static public $shortcodes = ['catalyst', 'flexman', 'giant', 'puppetmaster', 'tacticus', 'voltra'];
+    static public $shortcodes = [
+        'catalyst',
+        'flexman',
+        'giant',
+        'mike',
+        'monique',
+        'puppetmaster',
+        'ramon',
+        'scoop',
+        'tacticus',
+        'voltra',
+    ];
 
 
     /**

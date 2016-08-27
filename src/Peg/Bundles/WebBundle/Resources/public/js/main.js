@@ -51,7 +51,7 @@
     }
 
     function fetchPegs() {
-        const fetchPegsQuery = 'query GetAllPegs { pegs { shortcode, pegEvents { description, location, comment, pictureUrl } } }';
+        var fetchPegsQuery = 'query GetAllPegs { pegs { shortcode, pegEvents { description, location, comment, pictureUrl } } }';
         window.graphQLFetch(fetchPegsQuery, {}, reqListener);
     }
 
@@ -65,7 +65,7 @@
     $('#registerPeg').click(function(event) {
         event.preventDefault();
 
-        const fetchPegsQuery = 'mutation NewPeg { createPeg { shortcode } }';
+        var fetchPegsQuery = 'mutation NewPeg { createPeg { shortcode } }';
         window.graphQLFetch(fetchPegsQuery, {}, function() {
             var response = JSON.parse(this.responseText);
             var shortcode = response.data.createPeg.shortcode;

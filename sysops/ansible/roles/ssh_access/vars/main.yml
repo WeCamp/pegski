@@ -2,6 +2,9 @@ users:
     - name: merlijn
       pub_key:
       - public_keys/merlijn.pub
+    - name: toby
+      pub_key:
+      - public_keys/toby.pub
 
 deprecated_users:
 

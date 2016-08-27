@@ -33,12 +33,12 @@
             var description = '';
             var image = '/bundles/pegweb/img/kluut.jpg';
             if (peg.pegEvents.length > 0) {
-                var event = peg.pegEvents[peg.pegEvents.length - 1];
-                console.log(event);
-                description = event.description;
-
-                if (typeof event.pictureUrl != 'undefined') {
-                    image = event.pictureUrl;
+                for (var eventI = peg.pegEvents.length-1; eventI >= 0; eventI--) {
+                    console.log(peg.pegEvents[eventI]);
+                    if (peg.pegEvents[eventI].pictureUrl !== undefined && peg.pegEvents[eventI].pictureUrl !== null) {
+                        image = peg.pegEvents[eventI].pictureUrl;
+                        break;
+                    }
                 }
              }
 

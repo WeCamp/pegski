@@ -19,7 +19,7 @@ class LoadInitialPegs extends AbstractFixture implements SharedFixtureInterface
         'monique',
         'puppetmaster',
         'ramon',
-        'scoop',
+        'skoop',
         'tacticus',
         'voltra',
     ];

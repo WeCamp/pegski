@@ -11,6 +11,7 @@ use Peg\Bundles\ApiBundle\Document\Event;
 use Peg\Bundles\ApiBundle\Document\Peg;
 use Peg\Bundles\ApiBundle\Document\PictureEvent;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\SplFileInfo;
 
 class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, DependentFixtureInterface
 {
@@ -45,25 +46,27 @@ class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, D
             $basePath = "/pics/$shortcode";
             $path     = dirname(dirname(dirname(dirname(dirname(dirname(__DIR__)))))) . "/web$basePath";
             if (!is_dir($path)) {
-                var_dump("No images for $shortcode");
                 continue;
             }
 
             $finder = new Finder();
-            $finder->files()->in($path);
+            $finder->files()->in($path)->sortByName();
 
             $fileCount = $finder->count();
-
-            var_dump("$fileCount images for $shortcode");
 
             // We can't use $fileNo => $file in the foreach loop, as Finder returns the file name as the index, so use
             // manual index no
             $fileNo = 0;
             foreach ($finder as $file) {
                 $fileNo++;
+var_dump($file->getFilename());
+                $comment = null;
+                if ($shortcode == 'skoop') {
+                    $comment = $this->getCommentForSkoop($file);
+                }
 
                 $relativePath = preg_replace('#^.*' . $basePath . '#', $basePath, $file);
-                $pictureEvent = PictureEvent::create($peg, "You know… a picture", $relativePath, 'WeCamp');
+                $pictureEvent = PictureEvent::create($peg, "You know… a picture", $relativePath, 'WeCamp', $comment);
 
                 $happenedAtString      = '-' . ($fileCount - $fileNo) . ' hours';
                 $happenedAtDateTime    = new \DateTimeImmutable($happenedAtString);
@@ -75,5 +78,27 @@ class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, D
         }
 
         $manager->flush();
+    }
+
+    private function getCommentForSkoop(SplFileInfo $file)
+    {
+        switch ($file->getFilename()) {
+            case '_.jpg':
+                return 'Prepare myself ...';
+            case '1.jpg':
+                return 'I\'m ready and beautiful';
+            case '2.jpg':
+                return 'It\'s beer o\'clock';
+            case '3.jpg':
+                return 'var_dump or die()';
+            case '4.jpg':
+                return 'Hoping everything is OK';
+            case '5.jpg':
+                return 'Late code review';
+            case '6.jpg':
+                return 'Special treatment';
+            case '7.jpg':
+                return 'I\'m done for today';
+        }
     }
 }

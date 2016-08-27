@@ -2,7 +2,6 @@
 
 namespace Peg\Bundles\ApiBundle\DataFixtures\MongoDB;
 
-
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\DataFixtures\SharedFixtureInterface;
@@ -13,7 +12,6 @@ use Symfony\Component\Finder\Finder;
 
 class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, DependentFixtureInterface
 {
-
     /**
      * This method must return an array of fixtures classes
      * on which the implementing class depends on
@@ -40,7 +38,6 @@ class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, D
             $basePath = "/pics/$shortcode";
             $path     = dirname(dirname(dirname(dirname(dirname(dirname(__DIR__)))))) . "/web$basePath";
             if (!is_dir($path)) {
-                var_dump("Shortcode $shortcode has no images");
                 continue;
             }
 
@@ -48,7 +45,7 @@ class LoadPegEvents extends AbstractFixture implements SharedFixtureInterface, D
             $finder->files()->in($path);
 
             foreach ($finder as $file) {
-                $relativePath = preg_replace('#^.*'.$basePath.'#', $basePath, $file);
+                $relativePath = preg_replace('#^.*' . $basePath . '#', $basePath, $file);
                 $pictureEvent = PictureEvent::create($peg, "You know… a picture", $relativePath, 'WeCamp');
                 $manager->persist($pictureEvent);
             }

@@ -3,6 +3,8 @@
     'use strict';
 
     function reqListener() {
+        $('ul.timeline li').not(':first').remove();
+
         var response = JSON.parse(this.responseText);
         var timelineContainer = $('ul.timeline');
 
@@ -11,7 +13,7 @@
             var avatar = pegEvent.email !== null ? 'https://www.gravatar.com/avatar/' + md5(pegEvent.email) + '.jpg?s=200' : '/bundles/pegweb/img/peg_logo.png';
             var image = pegEvent.pictureUrl !== null ? '<img class="img-responsive" src="' + pegEvent.pictureUrl + '"/>' : '';
             var timeSinceEvent = pegEvent.happenedAt !== null ? getTimeSinceDateString(pegEvent.happenedAt) + ' ago' : '';
-            var locationString = pegEvent.location !== null ? ' in ' + pegEvent.location : '';
+            var locationString = pegEvent.location !== null ? ' in <i class="fa fa-location-arrow"></i> ' + pegEvent.location : '';
             var comment = pegEvent.comment !== null ? pegEvent.comment : '';
             var badge = getIconClassForPegEvent(pegEvent);
 
@@ -92,7 +94,7 @@
 
         var query = "query CreateEvent {" +
             "peg(shortcode: \"" + window.pegShortcode + "\") {" +
-                "createPegPictureEvent (comment:\"" + values['description'] + "\", location:\"" + values['location'] + "\", pictureUrl:\"" + values['picture'] + "\") { id }" +
+                "createPegPictureEvent (comment:\"" + values['comment'] + "\", location:\"" + values['location'] + "\", pictureUrl:\"" + values['picture'] + "\") { id }" +
             "}" +
             "}";
         window.graphQLFetch(query, {}, function () {

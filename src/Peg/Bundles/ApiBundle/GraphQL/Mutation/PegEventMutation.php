@@ -57,7 +57,7 @@ final class PegEventMutation
 
     public function createPegPhotoEvent(Peg $peg, string $photoUrl, string $comment = null, string $location = null, string $email = null) : PictureEvent
     {
-        $pegEvent = PictureEvent::create($peg, "PhotoEvent", $photoUrl, $comment, $location, $email);
+        $pegEvent = PictureEvent::create($peg, "PhotoEvent", $photoUrl, $location, $comment, $email);
         $command = new AddPicture($pegEvent);
 
         try {

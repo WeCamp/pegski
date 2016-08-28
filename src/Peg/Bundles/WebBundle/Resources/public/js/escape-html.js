@@ -12,7 +12,6 @@
  * Module variables.
  * @private
  */
-
 var matchHtmlRegExp = /["'&<>]/;
 
 /**

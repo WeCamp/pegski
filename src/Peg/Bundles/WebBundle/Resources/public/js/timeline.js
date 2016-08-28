@@ -84,7 +84,6 @@
         }
 
         var diffMonths = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneMonth)));
-        ;
         var timeString = diffMonths > 1 ? ' months' : ' month';
         return diffMonths + timeString;
 
@@ -104,8 +103,9 @@
             '<div class="timeline-panel">' +
             '<div class="timeline-heading"><p>Add a new event to the peg</p></div>' +
             '<div class="timeline-body"><form>' +
+            '<p><input type="email" name="email" placeholder="Optional email"></p>' +
             '<p><input type="text" name="location" placeholder="Location"></p>' +
-            '<p><input type="text" name="picture" placeholder="Picture URL"></p>' +
+            '<p><input type="url" name="picture" placeholder="Picture URL"></p>' +
             '<p><input type="text" name="comment" placeholder="Comment"></p>' +
             '<p><button type="submit" class="btn btn-primary">Save changes</button></p>' +
             '</form></div>' +
@@ -117,7 +117,7 @@
             event.preventDefault();
 
             // get all the inputs into an array.
-            var inputs = $('#newEvent form :input[type="text"]');
+            var inputs = $('#newEvent form :input:not([type="submit"])');
 
             // get an associative array of just the values.
             var values = {};
@@ -132,7 +132,8 @@
                 pegShortcode: window.pegShortcode,
                 inputComment: values['comment'],
                 inputPictureUrl: values['picture'],
-                inputLocation: values['location']
+                inputLocation: values['location'],
+                inputEmail: values['email']
             }, function () {
                 fetchPeg();
             });

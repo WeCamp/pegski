@@ -51,4 +51,4 @@ Peg:
             type:         "String"
           email:
             type: "String"
-        resolve: "@=mutation('peg_picture_event_mutation_create', [value, args['pictureUrl'], args['comment'], args['location']])"
+        resolve: "@=mutation('peg_picture_event_mutation_create', [value, args['pictureUrl'], args['comment'], args['location'], args['email']])"

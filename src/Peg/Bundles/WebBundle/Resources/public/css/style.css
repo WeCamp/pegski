@@ -103,13 +103,13 @@ body {
     font-size: 120%;
 }
 
-#newEvent input[type=text] {
+#newEvent input {
     background: transparent;
     border: none;
     width: 90%;
 }
 
-#newEvent input[type=text]:focus {
+#newEvent input:focus {
     outline: none;
 }
 

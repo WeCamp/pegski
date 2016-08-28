@@ -4,6 +4,10 @@
 
     window.latestEventWasInversed = false;
 
+    function decodeHtmlString(htmlString){
+        return escapeHtml(htmlString);
+    }
+
     function reqListener() {
         $('ul.timeline li').not(':first').remove();
 
@@ -11,6 +15,12 @@
         var timelineContainer = $('ul.timeline');
 
         response.data.peg.pegEvents.map(function (pegEvent, index) {
+
+            pegEvent.email = pegEvent.email ? decodeHtmlString(pegEvent.email) : null;
+            pegEvent.pictureUrl = pegEvent.pictureUrl ? decodeHtmlString(pegEvent.pictureUrl) : null;
+            pegEvent.location = pegEvent.location ? decodeHtmlString(pegEvent.location) : null;
+            pegEvent.comment = pegEvent.comment ? decodeHtmlString(pegEvent.comment) : null;
+
             var inversion = index % 2 == 0 ? "timeline-inverted" : "timeline";
             var avatar = pegEvent.email !== null ? 'https://www.gravatar.com/avatar/' + md5(pegEvent.email) + '.jpg?s=200' : '/bundles/pegweb/img/peg_logo.png';
             var image = pegEvent.pictureUrl !== null ? '<img class="img-responsive" src="' + pegEvent.pictureUrl + '"/>' : '';
@@ -21,7 +31,7 @@
 
             window.latestEventWasInversed = index % 2 == 0;
 
-            var item = timelineContainer.append('<li class="' + inversion + '">' +
+            timelineContainer.append('<li class="' + inversion + '">' +
                 '<div class="timeline-avatar"><img src="' + avatar + '" class="img-responsive img-circle"></div>' +
                 '<div class="timeline-badge"><i class="glyphicon glyphicon-' + badge + '"></i></div>' +
                 '<div class="timeline-panel">' +
@@ -88,7 +98,7 @@
         var timelineContainer = $('ul.timeline');
         $(timelineContainer).find('#new-event').remove();
 
-        var item = timelineContainer.prepend(
+        timelineContainer.prepend(
             '<li id="newEvent" class="' + inversion + '">' +
             '<div class="timeline-badge"><i class="glyphicon glyphicon-file"></i></div>' +
             '<div class="timeline-panel">' +
@@ -116,14 +126,17 @@
                 $(this).val('');
             });
 
-            var query = "query CreateEvent {" +
-                "peg(shortcode: \"" + window.pegShortcode + "\") {" +
-                "createPegPictureEvent (comment:\"" + values['comment'] + "\", location:\"" + values['location'] + "\", pictureUrl:\"" + values['picture'] + "\") { id }" +
-                "}" +
-                "}";
-            window.graphQLFetch(query, {}, function () {
+            var query = "query CreateEvent($pegShortcode: String!, $inputComment: String, $inputPictureUrl: String!, $inputLocation: String, $inputEmail: String) { peg(shortcode: $pegShortcode) { shortcode, createPegPictureEvent (comment: $inputComment, pictureUrl: $inputPictureUrl, location: $inputLocation, email: $inputEmail) { id } } }";
+
+            window.graphQLFetch(query, {
+                pegShortcode: window.pegShortcode,
+                inputComment: values['comment'],
+                inputPictureUrl: values['picture'],
+                inputLocation: values['location']
+            }, function () {
                 fetchPeg();
             });
+
 
             $(event.currentTarget).closest('#newEvent').remove();
         });

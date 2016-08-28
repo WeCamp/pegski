@@ -66,10 +66,10 @@ abstract class Event
     protected function __construct(Peg $peg, string $description, string $location = null, string $comment = null, string $email = null)
     {
         $this->peg         = $peg;
-        $this->description = $description;
-        $this->location    = $location;
-        $this->comment     = $comment;
-        $this->email       = $email;
+        $this->description = htmlspecialchars($description);
+        $this->location    = $location ? htmlspecialchars($location) : null;
+        $this->comment     = $comment ? htmlspecialchars($comment): null;
+        $this->email       = $email ? htmlspecialchars($email) : null;
 
         $this->happenedAt = (new \DateTime())->format(\DateTime::ATOM);
     }

@@ -16,13 +16,6 @@
 var matchHtmlRegExp = /["'&<>]/;
 
 /**
- * Module exports.
- * @public
- */
-
-module.exports = escapeHtml;
-
-/**
  * Escape special characters in the given string of html.
  *
  * @param  {string} string The string to escape for inserting into HTML

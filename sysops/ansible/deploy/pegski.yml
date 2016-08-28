@@ -27,12 +27,12 @@
        chdir: /home/ubuntu/pegski
 
     - name: run make setup
-      command: make run
+      command: make setup-production
       args:
         chdir: /home/ubuntu/pegski
 
     - name: run make run
-      command: make setup
+      command: make run
       args:
         chdir: /home/ubuntu/pegski
 

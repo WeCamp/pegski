@@ -8,6 +8,8 @@ build: clean
 setup: build
 	docker-compose run application composer install
 	docker-compose run application bin/console doctrine:mongodb:schema:update
+
+init-new: setup
 	docker-compose run application bin/console doctrine:mongodb:fixtures:load
 
 setup-production: build
